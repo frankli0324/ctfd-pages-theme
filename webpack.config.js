@@ -6,7 +6,6 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const RemoveStrictPlugin = require('remove-strict-webpack-plugin')
 const WebpackShellPlugin = require('webpack-shell-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const roots = {
   'themes/pages': {
@@ -75,10 +74,10 @@ function getJSConfig(root, type, entries, mode) {
       splitChunks: {
         chunks: 'all',
         cacheGroups: {
-          echarts: {
-            name: 'echarts',
-            filename: `echarts.bundle.${ext}.js`,
-            test: /echarts/,
+          plotly: {
+            name: 'plotly',
+            filename: `plotly.bundle.${ext}.js`,
+            test: /plotly/,
             priority: 1,
             enforce: true,
           },
@@ -133,25 +132,9 @@ function getJSConfig(root, type, entries, mode) {
             }
           }
         },
-        {
-          test: /\.vue$/,
-          loader: 'vue-loader',
-          options: {
-            loaders: {
-              css: ['vue-style-loader', {
-                loader: 'css-loader',
-              }],
-              js: [
-                'babel-loader',
-              ],
-            },
-            cacheBusting: true,
-          },
-        }
       ],
     },
     plugins: [
-      new VueLoaderPlugin(),
       new webpack.NamedModulesPlugin(),
       new RemoveStrictPlugin(),
       // Identify files that are generated in development but not in production and create stubs to avoid a 404
@@ -208,13 +191,6 @@ function getCSSConfig(root, type, entries, mode) {
             }
           ]
         },
-        // {
-        //   test: /\.css$/,
-        //   use: [
-        //     'vue-style-loader',
-        //     'css-loader'
-        //   ]
-        // },
         {
           test: /\.(s?)css$/,
           use: [
