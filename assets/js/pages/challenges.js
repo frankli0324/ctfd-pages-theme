@@ -277,7 +277,26 @@ function loadChals() {
     const $challenges_board = $("#challenges-board");
     const current_page_id = $("#pages-board>.active")[0].id;
     $challenges_board.empty();
+    function addCategoryRow(category) {
+        categories.push(category);
+        const categoryid = category.replace(/ /g, "-").hashCode();
+        const categoryrow = $(
+            "" +
+            '<div id="{0}-row" class="pt-5">'.format(categoryid) +
+            '<div class="category-header col-md-12 mb-3">' +
+            "</div>" +
+            '<div class="category-challenges col-md-12">' +
+            '<div class="challenges-row col-md-12"></div>' +
+            "</div>" +
+            "</div>"
+        );
+        categoryrow
+            .find(".category-header")
+            .append($("<h3>" + category + "</h3>"));
 
+        $challenges_board.append(categoryrow);
+    }
+    addCategoryRow("");
     for (let i = challenges.length - 1; i >= 0; i--) {
         challenges[i].solves = 0;
         var category = challenges[i].category.split('.')[1];
@@ -286,25 +305,8 @@ function loadChals() {
             .replace(/ /g, "-").hashCode());
         if (page !== current_page_id) continue;
         if (category === undefined) category = "";
-        if ($.inArray(category, categories) == -1) {
-            categories.push(category);
-            const categoryid = category.replace(/ /g, "-").hashCode();
-            const categoryrow = $(
-                "" +
-                '<div id="{0}-row" class="pt-5">'.format(categoryid) +
-                '<div class="category-header col-md-12 mb-3">' +
-                "</div>" +
-                '<div class="category-challenges col-md-12">' +
-                '<div class="challenges-row col-md-12"></div>' +
-                "</div>" +
-                "</div>"
-            );
-            categoryrow
-                .find(".category-header")
-                .append($("<h3>" + category + "</h3>"));
-
-            $challenges_board.append(categoryrow);
-        }
+        if ($.inArray(category, categories) == -1)
+            addCategoryRow(category);
     }
     for (let i = 0; i <= challenges.length - 1; i++) {
         const chalinfo = challenges[i];
@@ -393,7 +395,7 @@ setInterval(update, 300000); // Update every 5 minutes.
 const displayHint = data => {
     ezAlert({
         title: "Hint",
-        body: md.loadUserSolves(data.content),
+        body: md.render(data.content),
         button: "Got it!"
     });
 };
