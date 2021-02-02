@@ -39,6 +39,12 @@
 				</h3>
 			{% endif %}
 
+			{% for field in user.fields %}
+				<h3 class="d-block">
+					{{ field.name }}: {{ field.value }}
+				</h3>
+			{% endfor %}
+
 			<div>
 				<h2 class="text-center">
 					{% if account.place %}
@@ -54,7 +60,7 @@
 
 			<div class="pt-3">
 				{% if user.website %}
-					<a href="{{ user.website }}" target="_blank" style="color: inherit;">
+					<a href="{{ user.website }}" target="_blank" style="color: inherit;" rel="noopener">
 						<i class="fas fa-external-link-alt fa-2x px-2" data-toggle="tooltip" data-placement="top"
 						   title="{{ user.website }}"></i>
 					</a>
@@ -66,20 +72,28 @@
 		{% include "components/errors.html" %}
 
 		{% if user.solves %}
-			<div id="keys-pie-graph" class="w-50 mr-0 pr-0 float-left d-none d-md-block d-lg-block">
-				<div class="text-center">
-					<i class="fas fa-circle-notch fa-spin fa-3x fa-fw spinner"></i>
+			<div class="row">
+				<div class="col-md-6 d-none d-md-block d-lg-block">
+					<div id="keys-pie-graph" class="d-flex align-items-center">
+						<div class="text-center w-100">
+							<i class="fas fa-circle-notch fa-spin fa-3x fa-fw spinner"></i>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div id="categories-pie-graph" class="w-50 mr-0 pr-0 float-left d-none d-md-block d-lg-block">
-				<div class="text-center">
-					<i class="fas fa-circle-notch fa-spin fa-3x fa-fw spinner"></i>
+				<div class="col-md-6 d-none d-md-block d-lg-block">
+					<div id="categories-pie-graph" class="d-flex align-items-center">
+						<div class="text-center w-100">
+							<i class="fas fa-circle-notch fa-spin fa-3x fa-fw spinner"></i>
+						</div>
+					</div>
 				</div>
-			</div>
-			<br class="clearfix">
-			<div id="score-graph" class="w-100 float-right d-none d-md-block d-lg-block">
-				<div class="text-center">
-					<i class="fas fa-circle-notch fa-spin fa-3x fa-fw spinner"></i>
+				<br class="clearfix">
+				<div class="col-md-12 d-none d-md-block d-lg-block">
+					<div id="score-graph" class="w-100 d-flex align-items-center">
+						<div class="text-center w-100">
+							<i class="fas fa-circle-notch fa-spin fa-3x fa-fw spinner"></i>
+						</div>
+					</div>
 				</div>
 			</div>
 
