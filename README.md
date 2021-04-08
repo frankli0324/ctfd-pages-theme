@@ -1,6 +1,6 @@
 # ctfd-pages-theme
 
-将题目分类分页，目前用于https://archive.lctf.online
+将题目分类分页，目前用于 https://ctf.xidian.edu.cn 以及 https://ctf.show
 
 ## 食用方式
 
