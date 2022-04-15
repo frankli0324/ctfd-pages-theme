@@ -1,0 +1,1 @@
+import{T as e}from"./vendor.52debd16.js";function a(o){const t=new e(o,{title:"Copied!",trigger:"manual"});navigator.clipboard.writeText(o.value).then(()=>{t.show(),setTimeout(()=>{t.hide()},1500)})}export{a as c};
