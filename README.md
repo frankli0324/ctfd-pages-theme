@@ -4,7 +4,5 @@ Rewritten version of the CTFd core theme to use Bootstrap 5, Alpine.js, and vite
 
 ## Todo
 
-- Document usage of CTFd.js
-- Document usage of Alpine.js
 - Document how we are using Vite
-- Document the building process
+- Create a cookie cutter template package to use with Vite
