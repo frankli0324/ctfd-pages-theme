@@ -38,6 +38,7 @@ export default defineConfig({
       ],
       input: {
         index: resolve(__dirname, "assets/js/index.js"),
+        setup: resolve(__dirname, "assets/js/setup.js"),
         settings: resolve(__dirname, "assets/js/settings.js"),
         challenges: resolve(__dirname, "assets/js/challenges.js"),
         scoreboard: resolve(__dirname, "assets/js/scoreboard.js"),
