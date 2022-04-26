@@ -1,9 +1,10 @@
-import Modal from "bootstrap/js/dist/modal";
-
 import Alpine from "alpinejs";
+import { Modal } from "bootstrap";
+
+import { serializeJSON } from "@ctfdio/ctfd-js/forms";
+import embed from "vega-embed";
 
 import CTFd from "../index";
-import { serializeJSON } from "@ctfdio/ctfd-js/forms";
 import {
   getValues as getSolveValues,
   getSpec as getSolveSpec,
@@ -18,9 +19,8 @@ import {
 } from "../utils/graphs/userscore";
 import { copyToClipboard } from "../utils/clipboard";
 
-import embed from "vega-embed";
-
 window.Alpine = Alpine;
+window.CTFd = CTFd;
 
 Alpine.store("inviteToken", "");
 

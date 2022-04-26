@@ -15,7 +15,6 @@ import eventAlerts from "./utils/notifications/alerts";
 import eventToasts from "./utils/notifications/toasts";
 
 dayjs.extend(advancedFormat);
-
 CTFd.init(window.init);
 
 (() => {
@@ -27,8 +26,8 @@ CTFd.init(window.init);
   tooltips();
   collapse();
 
-  eventToasts();
   eventAlerts();
+  eventToasts();
 })();
 
 export default CTFd;

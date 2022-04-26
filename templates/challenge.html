@@ -48,17 +48,19 @@
             {% endif %}
 
             {% if challenge.connection_info %}
-              <span class="challenge-connection-info">
-                {% block connection_info %}
-                  {% set conn = challenge.connection_info %}
-                  {% if not conn %}
-                  {% elif conn.startswith("http") %}
-                    {{ conn | urlize(target="_blank") }}
-                  {% else %}
-                    <code>{{ conn }}</code>
-                  {% endif %}
-                {% endblock %}
-              </span>
+              <div class="mb-2">
+                <span class="challenge-connection-info">
+                  {% block connection_info %}
+                    {% set conn = challenge.connection_info %}
+                    {% if not conn %}
+                    {% elif conn.startswith("http") %}
+                      {{ conn | urlize(target="_blank") }}
+                    {% else %}
+                      <code>{{ conn }}</code>
+                    {% endif %}
+                  {% endblock %}
+                </span>
+              </div>
             {% endif %}
 
             {% if hints %}
@@ -127,7 +129,7 @@
                   >
                   <input
                       id="challenge-input" class="challenge-input form-control"
-                      @keyup.enter="submitChallenge()" type="text" name="submission"
+                      type="text" name="submission"
                       placeholder="Flag" x-model="submission"
                   >
                 {% endblock %}
@@ -138,7 +140,6 @@
                   <button
                       id="challenge-submit"
                       class="challenge-submit btn btn-outline-secondary w-100 h-100" type="submit"
-                      @click.debounce.500ms="submitChallenge()"
                   >
                     Submit
                   </button>

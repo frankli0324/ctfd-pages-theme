@@ -4,10 +4,10 @@ import { Modal } from "bootstrap";
 import CTFd from "../../index";
 
 export default () => {
-  Alpine.store("modal", { title: "", html: "" });
+  Alpine.store("modal", {title: "", html: ""},);
 
   CTFd._functions.events.eventAlert = (data) => {
-    Alpine.store("modal", data);
-    new Modal(document.querySelector("[x-ref='modal']")).show();
-  };
-};
+      Alpine.store("modal", data);
+      new Modal(document.querySelector("[x-ref='modal']")).show();
+  }
+}

@@ -5,3 +5,7 @@
     {{ content | safe }}
   </div>
 {% endblock %}
+
+{% block scripts %}
+  {{ Assets.js("assets/js/notifications.js") }}
+{% endblock %}
