@@ -14,10 +14,10 @@ export function getSpec(description, values) {
         field: "name",
         type: "nominal",
         legend: {
-          orient: "bottom",
-        },
-      },
-    },
+          orient: "bottom"
+        }
+      }
+    }
   };
   return spec;
 }
@@ -39,11 +39,11 @@ export function getValues(scoreboardDetail) {
 
     const total_scores = cumulativeSum(team_score);
     const team_name = team["name"];
-    let scores = times.map(function (e, i) {
+    let scores = times.map(function(e, i) {
       return {
         name: team_name,
         score: total_scores[i],
-        date: e,
+        date: e
       };
     });
     values = values.concat(scores);

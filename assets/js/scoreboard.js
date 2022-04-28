@@ -16,7 +16,7 @@ Alpine.data("ScoreboardDetail", () => ({
     let values = getValues(this.data);
     let spec = getSpec("Top 10", values);
     embed(this.$refs.scoregraph, spec);
-  },
+  }
 }));
 
 Alpine.start();
