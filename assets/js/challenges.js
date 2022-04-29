@@ -8,7 +8,7 @@ function addTargetBlank(html) {
   let dom = new DOMParser();
   let view = dom.parseFromString(html, "text/html");
   let links = view.querySelectorAll('a[href*="://"]');
-  links.forEach(link => {
+  links.forEach((link) => {
     link.setAttribute("target", "_blank");
   });
   return view.documentElement.outerHTML;
@@ -18,8 +18,8 @@ window.Alpine = Alpine;
 
 Alpine.store("challenge", {
   data: {
-    view: ""
-  }
+    view: "",
+  },
 });
 
 Alpine.data("Hint", () => ({
@@ -50,7 +50,7 @@ Alpine.data("Hint", () => ({
         }
       }
     }
-  }
+  },
 }));
 
 Alpine.data("Challenge", () => ({
@@ -61,27 +61,9 @@ Alpine.data("Challenge", () => ({
   solves: [],
   response: null,
 
-  init() {
-    const self = this;
-    const submit = document.querySelector("#challenge-submit");
-
-    // eslint-disable-next-line no-undef
-    if (challenge && challenge.submit) {
-      submit.addEventListener(
-        "click",
-        Alpine.debounce(this.submitCustomChallenge.bind(self), 500)
-      );
-    } else {
-      submit.addEventListener(
-        "click",
-        Alpine.debounce(this.submitChallenge.bind(self), 500)
-      );
-    }
-  },
-
   getStyles() {
     let styles = {
-      "modal-dialog": true
+      "modal-dialog": true,
     };
     try {
       let size = CTFd.config.themeSettings.challenge_window_size;
@@ -112,7 +94,7 @@ Alpine.data("Challenge", () => ({
 
   async showSolves() {
     this.solves = await CTFd.pages.challenge.loadSolves(this.id);
-    this.solves.forEach(solve => {
+    this.solves.forEach((solve) => {
       solve.date = dayjs(solve.date).format("MMMM Do, h:mm:ss A");
       return solve;
     });
@@ -131,12 +113,6 @@ Alpine.data("Challenge", () => ({
     this.$dispatch("load-challenge", this.getNextId());
   },
 
-  async submitCustomChallenge() {
-    // eslint-disable-next-line no-undef
-    this.response = await challenge.submit(false);
-    await this.renderSubmissionResponse();
-  },
-
   async submitChallenge() {
     this.response = await CTFd.pages.challenge.submitChallenge(
       this.id,
@@ -153,7 +129,7 @@ Alpine.data("Challenge", () => ({
 
     // Dispatch load-challenges event to call loadChallenges in the ChallengeBoard
     this.$dispatch("load-challenges");
-  }
+  },
 }));
 
 Alpine.data("ChallengeBoard", () => ({
@@ -169,7 +145,7 @@ Alpine.data("ChallengeBoard", () => ({
   getCategories() {
     const categories = [];
 
-    this.challenges.forEach(challenge => {
+    this.challenges.forEach((challenge) => {
       const { category } = challenge;
 
       if (!categories.includes(category)) {
@@ -197,7 +173,7 @@ Alpine.data("ChallengeBoard", () => ({
 
     if (category) {
       challenges = this.challenges.filter(
-        challenge => challenge.category === category
+        (challenge) => challenge.category === category
       );
     }
 
@@ -221,7 +197,7 @@ Alpine.data("ChallengeBoard", () => ({
   },
 
   async loadChallenge(challengeId) {
-    await CTFd.pages.challenge.displayChallenge(challengeId, challenge => {
+    await CTFd.pages.challenge.displayChallenge(challengeId, (challenge) => {
       challenge.data.view = addTargetBlank(challenge.data.view);
       Alpine.store("challenge").data = challenge.data;
 
@@ -230,7 +206,7 @@ Alpine.data("ChallengeBoard", () => ({
         Modal.getOrCreateInstance("[x-ref='challengeWindow']").show();
       });
     });
-  }
+  },
 }));
 
 Alpine.start();
