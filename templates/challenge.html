@@ -43,9 +43,7 @@
               </div>
             {% endif %}
 
-            {% if challenge.html %}
-              <span class="challenge-desc">{% block description %}{{ challenge.html }}{% endblock %}</span>
-            {% endif %}
+            <span class="challenge-desc">{% block description %}{{ challenge.html }}{% endblock %}</span>
 
             {% if challenge.connection_info %}
               <div class="mb-2">
