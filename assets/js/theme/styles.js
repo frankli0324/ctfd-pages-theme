@@ -1,5 +1,5 @@
 export default () => {
-  document.querySelectorAll(".form-control").forEach(($el) => {
+  document.querySelectorAll(".form-control").forEach($el => {
     $el.addEventListener("onfocus", () => {
       $el.classList.remove("input-filled-invalid");
       $el.classList.add("input-filled-valid");
@@ -17,7 +17,7 @@ export default () => {
     }
   });
 
-  document.querySelectorAll(".page-select").forEach(($el) => {
+  document.querySelectorAll(".page-select").forEach($el => {
     if ($el.nodeValue) {
       const url = new URL(window.location);
       url.searchParams.set("page", $el.nodeValue);

@@ -1,26 +1,26 @@
-import Modal from "bootstrap/js/dist/modal";
-
 import Alpine from "alpinejs";
+import { Modal } from "bootstrap";
+
+import { serializeJSON } from "@ctfdio/ctfd-js/forms";
+import embed from "vega-embed";
 
 import CTFd from "../index";
-import { serializeJSON } from "@ctfdio/ctfd-js/forms";
 import {
   getValues as getSolveValues,
-  getSpec as getSolveSpec,
+  getSpec as getSolveSpec
 } from "../utils/graphs/solve-percentage";
 import {
   getValues as getCategoryValues,
-  getSpec as getCategorySpec,
+  getSpec as getCategorySpec
 } from "../utils/graphs/categories";
 import {
   getValues as getUserValues,
-  getSpec as getUserSpec,
+  getSpec as getUserSpec
 } from "../utils/graphs/userscore";
 import { copyToClipboard } from "../utils/clipboard";
 
-import embed from "vega-embed";
-
 window.Alpine = Alpine;
+window.CTFd = CTFd;
 
 Alpine.store("inviteToken", "");
 
@@ -61,12 +61,12 @@ Alpine.data("TeamEditModal", () => ({
     } else {
       this.success = false;
       this.error = true;
-      Object.keys(response.errors).map((error) => {
+      Object.keys(response.errors).map(error => {
         const error_msg = response.errors[error];
         this.errors.push(error_msg);
       });
     }
-  },
+  }
 }));
 
 Alpine.data("TeamCaptainModal", () => ({
@@ -83,18 +83,18 @@ Alpine.data("TeamCaptainModal", () => ({
     } else {
       this.success = false;
       this.error = true;
-      Object.keys(response.errors).map((error) => {
+      Object.keys(response.errors).map(error => {
         const error_msg = response.errors[error];
         this.errors.push(error_msg);
       });
     }
-  },
+  }
 }));
 
 Alpine.data("TeamInviteModal", () => ({
   copy() {
     copyToClipboard(this.$refs.link);
-  },
+  }
 }));
 
 Alpine.data("TeamDisbandModal", () => ({
@@ -108,7 +108,7 @@ Alpine.data("TeamDisbandModal", () => ({
     } else {
       this.errors = response.errors[""];
     }
-  },
+  }
 }));
 
 Alpine.data("CaptainMenu", () => ({
@@ -131,7 +131,9 @@ Alpine.data("CaptainMenu", () => ({
 
     if (response.success) {
       const code = response.data.code;
-      const url = `${window.location.origin}${CTFd.config.urlRoot}/teams/invite?code=${code}`;
+      const url = `${window.location.origin}${
+        CTFd.config.urlRoot
+      }/teams/invite?code=${code}`;
 
       document.querySelector("#team-invite-modal input[name=link]").value = url;
       this.$store.inviteToken = url;
@@ -147,7 +149,7 @@ Alpine.data("CaptainMenu", () => ({
       document.getElementById("team-disband-modal")
     );
     this.teamDisbandModal.show();
-  },
+  }
 }));
 
 Alpine.data("TeamGraphs", () => ({
@@ -171,7 +173,7 @@ Alpine.data("TeamGraphs", () => ({
     let userValues = getUserValues(this.solves, this.awards);
     let userSpec = getUserSpec("Score Graph", userValues);
     embed(this.$refs.scoregraph, userSpec);
-  },
+  }
 }));
 
 Alpine.start();

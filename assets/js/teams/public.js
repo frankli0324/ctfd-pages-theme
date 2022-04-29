@@ -7,15 +7,15 @@ import CTFd from "../index";
 
 import {
   getValues as getSolveValues,
-  getSpec as getSolveSpec,
+  getSpec as getSolveSpec
 } from "../utils/graphs/solve-percentage";
 import {
   getValues as getCategoryValues,
-  getSpec as getCategorySpec,
+  getSpec as getCategorySpec
 } from "../utils/graphs/categories";
 import {
   getValues as getUserValues,
-  getSpec as getUserSpec,
+  getSpec as getUserSpec
 } from "../utils/graphs/userscore";
 
 window.Alpine = Alpine;
@@ -41,7 +41,7 @@ Alpine.data("TeamGraphs", () => ({
     let userValues = getUserValues(this.solves, this.awards);
     let userSpec = getUserSpec("Score Graph", userValues);
     embed(this.$refs.scoregraph, userSpec);
-  },
+  }
 }));
 
 Alpine.start();

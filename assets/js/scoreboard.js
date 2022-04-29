@@ -1,14 +1,11 @@
 import Alpine from "alpinejs";
-import CTFd from "./index";
+import embed from "vega-embed";
 
-import { serializeJSON } from "@ctfdio/ctfd-js/forms";
-import { copyToClipboard } from "./utils/clipboard";
+import CTFd from "./index";
 import { getValues, getSpec } from "./utils/graphs/scoreboard";
 
-import embed from "vega-embed";
-import dayjs from "dayjs";
-
 window.Alpine = Alpine;
+window.CTFd = CTFd;
 
 Alpine.data("ScoreboardDetail", () => ({
   data: null,
@@ -19,7 +16,7 @@ Alpine.data("ScoreboardDetail", () => ({
     let values = getValues(this.data);
     let spec = getSpec("Top 10", values);
     embed(this.$refs.scoregraph, spec);
-  },
+  }
 }));
 
 Alpine.start();
