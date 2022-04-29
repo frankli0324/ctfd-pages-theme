@@ -130,6 +130,7 @@
                   <input
                       id="challenge-input" class="challenge-input form-control"
                       type="text" name="submission"
+                      @keyup.enter="submitChallenge()"
                       placeholder="Flag" x-model="submission"
                   >
                 {% endblock %}
@@ -140,6 +141,7 @@
                   <button
                       id="challenge-submit"
                       class="challenge-submit btn btn-outline-secondary w-100 h-100" type="submit"
+                      @click.debounce.500ms="submitChallenge()"
                   >
                     Submit
                   </button>
