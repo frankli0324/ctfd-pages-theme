@@ -19,6 +19,8 @@
           'userId': {{ Session.id }},
           'userName': "{{ User.name }}",
           'userEmail': "{{ User.email }}",
+          'teamId': {{ Team.id }}, 
+          'teamName': "{{ Team.name }}",
           'start': {{ Configs.start | tojson }},
           'end': {{ Configs.end | tojson }},
           'themeSettings': {{ Configs.theme_settings | tojson }}

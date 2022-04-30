@@ -1,9 +1,8 @@
 import Alpine from "alpinejs";
 import CTFd from "./index";
 
-import { getValues, getSpec } from "./utils/graphs/scoreboard";
-
-import embed from "vega-embed";
+import { getOption } from "./utils/graphs/echarts/scoreboard";
+import { embed } from "./utils/graphs/echarts";
 
 window.Alpine = Alpine;
 
@@ -12,10 +11,10 @@ Alpine.data("ScoreboardDetail", () => ({
 
   async init() {
     this.data = await CTFd.pages.scoreboard.getScoreboardDetail(10);
+    console.log(this.data);
 
-    let values = getValues(this.data);
-    let spec = getSpec("Top 10", values);
-    embed(this.$refs.scoregraph, spec);
+    let option = getOption(CTFd.config.userMode, this.data);
+    embed(this.$refs.scoregraph, option);
   },
 }));
 
