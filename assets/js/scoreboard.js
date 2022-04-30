@@ -11,7 +11,6 @@ Alpine.data("ScoreboardDetail", () => ({
 
   async init() {
     this.data = await CTFd.pages.scoreboard.getScoreboardDetail(10);
-    console.log(this.data);
 
     let option = getOption(CTFd.config.userMode, this.data);
     embed(this.$refs.scoregraph, option);

@@ -125,7 +125,6 @@ Alpine.data("SetupForm", () => ({
   },
 
   submitSetup(e) {
-    console.log(document.querySelector("#newsletter-checkbox").checked);
     if (document.querySelector("#newsletter-checkbox").checked) {
       let email = e.target.querySelector("input[name=email]").value;
       let params = {

@@ -99,7 +99,6 @@ export function getOption(mode, places) {
       },
       data: scores,
     };
-    console.log(data);
     option.series.push(data);
   }
 
