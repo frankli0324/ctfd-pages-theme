@@ -1,12 +1,9 @@
 import Alpine from "alpinejs";
 import CTFd from "./index";
 
-import { serializeJSON } from "@ctfdio/ctfd-js/forms";
-import { copyToClipboard } from "./utils/clipboard";
 import { getValues, getSpec } from "./utils/graphs/scoreboard";
 
 import embed from "vega-embed";
-import dayjs from "dayjs";
 
 window.Alpine = Alpine;
 
