@@ -1,149 +1,149 @@
 {
   "assets/js/index.js": {
-    "file": "assets/index.14b1b30a.js",
+    "file": "assets/index.10dd6806.js",
     "src": "assets/js/index.js",
     "isEntry": true,
     "imports": [
-      "_vendor.aee45934.js"
+      "_vendor.fb030c6b.js"
     ]
   },
   "assets/js/page.js": {
-    "file": "assets/page.4e034a23.js",
+    "file": "assets/page.531a9347.js",
     "src": "assets/js/page.js",
     "isEntry": true,
     "imports": [
-      "_vendor.aee45934.js",
+      "_vendor.fb030c6b.js",
       "assets/js/index.js"
     ]
   },
   "assets/js/setup.js": {
-    "file": "assets/setup.ad27baa8.js",
+    "file": "assets/setup.1dc446fc.js",
     "src": "assets/js/setup.js",
     "isEntry": true,
     "imports": [
-      "_vendor.aee45934.js",
+      "_vendor.fb030c6b.js",
       "assets/js/index.js"
     ]
   },
   "assets/js/settings.js": {
-    "file": "assets/settings.476d1224.js",
+    "file": "assets/settings.0b693cde.js",
     "src": "assets/js/settings.js",
     "isEntry": true,
     "imports": [
-      "_vendor.aee45934.js",
+      "_vendor.fb030c6b.js",
       "assets/js/index.js",
-      "_clipboard.14c6df0e.js"
+      "_clipboard.23be8e38.js"
     ]
   },
   "assets/js/challenges.js": {
-    "file": "assets/challenges.5b68b287.js",
+    "file": "assets/challenges.4a8728ee.js",
     "src": "assets/js/challenges.js",
     "isEntry": true,
     "imports": [
-      "_vendor.aee45934.js",
+      "_vendor.fb030c6b.js",
       "assets/js/index.js"
     ]
   },
   "assets/js/scoreboard.js": {
-    "file": "assets/scoreboard.cb8f9a66.js",
+    "file": "assets/scoreboard.ba57d17f.js",
     "src": "assets/js/scoreboard.js",
     "isEntry": true,
     "imports": [
-      "_vendor.aee45934.js",
-      "_index.d1cb61ec.js"
+      "_vendor.fb030c6b.js",
+      "_index.a75c2f5b.js"
     ]
   },
   "assets/js/notifications.js": {
-    "file": "assets/notifications.a716144d.js",
+    "file": "assets/notifications.6f7d600c.js",
     "src": "assets/js/notifications.js",
     "isEntry": true,
     "imports": [
-      "_vendor.aee45934.js",
+      "_vendor.fb030c6b.js",
       "assets/js/index.js"
     ]
   },
   "assets/js/teams/public.js": {
-    "file": "assets/teams_public.db8ea6f2.js",
+    "file": "assets/teams_public.979d2467.js",
     "src": "assets/js/teams/public.js",
     "isEntry": true,
     "imports": [
-      "_vendor.aee45934.js",
+      "_vendor.fb030c6b.js",
       "assets/js/index.js",
-      "_userscore.4de467c3.js",
-      "_index.d1cb61ec.js"
+      "_userscore.6350273b.js",
+      "_index.a75c2f5b.js"
     ]
   },
   "assets/js/teams/private.js": {
-    "file": "assets/teams_private.80d0c3bd.js",
+    "file": "assets/teams_private.9d9fe23d.js",
     "src": "assets/js/teams/private.js",
     "isEntry": true,
     "imports": [
-      "_vendor.aee45934.js",
-      "_clipboard.14c6df0e.js",
-      "_userscore.4de467c3.js",
-      "_index.d1cb61ec.js"
+      "_vendor.fb030c6b.js",
+      "_clipboard.23be8e38.js",
+      "_userscore.6350273b.js",
+      "_index.a75c2f5b.js"
     ]
   },
   "assets/js/teams/list.js": {
-    "file": "assets/teams_list.ac605c1c.js",
+    "file": "assets/teams_list.2f9bd2e7.js",
     "src": "assets/js/teams/list.js",
     "isEntry": true,
     "imports": [
-      "_vendor.aee45934.js",
+      "_vendor.fb030c6b.js",
       "assets/js/index.js"
     ]
   },
   "assets/js/users/public.js": {
-    "file": "assets/users_public.7a05d733.js",
+    "file": "assets/users_public.0210c5f9.js",
     "src": "assets/js/users/public.js",
     "isEntry": true,
     "imports": [
-      "_vendor.aee45934.js",
+      "_vendor.fb030c6b.js",
       "assets/js/index.js",
-      "_userscore.4de467c3.js",
-      "_index.d1cb61ec.js"
+      "_userscore.6350273b.js",
+      "_index.a75c2f5b.js"
     ]
   },
   "assets/js/users/private.js": {
-    "file": "assets/users_private.d5e16f48.js",
+    "file": "assets/users_private.9fda892d.js",
     "src": "assets/js/users/private.js",
     "isEntry": true,
     "imports": [
-      "_vendor.aee45934.js",
+      "_vendor.fb030c6b.js",
       "assets/js/index.js",
-      "_userscore.4de467c3.js",
-      "_index.d1cb61ec.js"
+      "_userscore.6350273b.js",
+      "_index.a75c2f5b.js"
     ]
   },
   "assets/js/users/list.js": {
-    "file": "assets/users_list.97272220.js",
+    "file": "assets/users_list.7eadd6a8.js",
     "src": "assets/js/users/list.js",
     "isEntry": true,
     "imports": [
-      "_vendor.aee45934.js",
+      "_vendor.fb030c6b.js",
       "assets/js/index.js"
     ]
   },
-  "_vendor.aee45934.js": {
-    "file": "assets/vendor.aee45934.js"
+  "_vendor.fb030c6b.js": {
+    "file": "assets/vendor.fb030c6b.js"
   },
-  "_clipboard.14c6df0e.js": {
-    "file": "assets/clipboard.14c6df0e.js",
+  "_clipboard.23be8e38.js": {
+    "file": "assets/clipboard.23be8e38.js",
     "imports": [
-      "_vendor.aee45934.js"
+      "_vendor.fb030c6b.js"
     ]
   },
-  "_index.d1cb61ec.js": {
-    "file": "assets/index.d1cb61ec.js",
+  "_index.a75c2f5b.js": {
+    "file": "assets/index.a75c2f5b.js",
     "imports": [
-      "_vendor.aee45934.js"
+      "_vendor.fb030c6b.js"
     ]
   },
-  "_userscore.4de467c3.js": {
-    "file": "assets/userscore.4de467c3.js",
+  "_userscore.6350273b.js": {
+    "file": "assets/userscore.6350273b.js",
     "imports": [
-      "_vendor.aee45934.js",
-      "_index.d1cb61ec.js"
+      "_vendor.fb030c6b.js",
+      "_index.a75c2f5b.js"
     ]
   }
 }

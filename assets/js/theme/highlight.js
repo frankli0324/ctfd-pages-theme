@@ -51,20 +51,11 @@ hljs.registerLanguage("python", python);
 import rust from "highlight.js/lib/languages/rust";
 hljs.registerLanguage("rust", rust);
 
-import scss from "highlight.js/lib/languages/scss";
-hljs.registerLanguage("scss", scss);
-
 import sql from "highlight.js/lib/languages/sql";
 hljs.registerLanguage("sql", sql);
 
-import swift from "highlight.js/lib/languages/swift";
-hljs.registerLanguage("swift", swift);
-
 import yaml from "highlight.js/lib/languages/yaml";
 hljs.registerLanguage("yaml", yaml);
-
-import typescript from "highlight.js/lib/languages/typescript";
-hljs.registerLanguage("typescript", typescript);
 
 export default () => {
   document.querySelectorAll("pre code").forEach((el) => {
