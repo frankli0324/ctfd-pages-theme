@@ -36,6 +36,11 @@ export default defineConfig({
           hook: "writeBundle",
         }),
       ],
+      output: {
+        manualChunks: {
+          echarts: ['echarts', 'zrender']
+        }
+      },
       input: {
         index: resolve(__dirname, "assets/js/index.js"),
         page: resolve(__dirname, "assets/js/page.js"),
