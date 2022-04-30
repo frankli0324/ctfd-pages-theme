@@ -57,8 +57,6 @@ export function getOption(id, name, solves, awards) {
 
       const times = [];
       const scores = [];
-    //   const solves = responses[0].data;
-    //   const awards = responses[2].data;
       const total = solves.concat(awards);
 
       total.sort((a, b) => {
