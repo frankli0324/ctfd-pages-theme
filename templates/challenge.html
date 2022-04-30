@@ -43,22 +43,22 @@
               </div>
             {% endif %}
 
-            {% if challenge.html %}
-              <span class="challenge-desc">{% block description %}{{ challenge.html }}{% endblock %}</span>
-            {% endif %}
+            <span class="challenge-desc">{% block description %}{{ challenge.html }}{% endblock %}</span>
 
             {% if challenge.connection_info %}
-              <span class="challenge-connection-info">
-                {% block connection_info %}
-                  {% set conn = challenge.connection_info %}
-                  {% if not conn %}
-                  {% elif conn.startswith("http") %}
-                    {{ conn | urlize(target="_blank") }}
-                  {% else %}
-                    <code>{{ conn }}</code>
-                  {% endif %}
-                {% endblock %}
-              </span>
+              <div class="mb-2">
+                <span class="challenge-connection-info">
+                  {% block connection_info %}
+                    {% set conn = challenge.connection_info %}
+                    {% if not conn %}
+                    {% elif conn.startswith("http") %}
+                      {{ conn | urlize(target="_blank") }}
+                    {% else %}
+                      <code>{{ conn }}</code>
+                    {% endif %}
+                  {% endblock %}
+                </span>
+              </div>
             {% endif %}
 
             {% if hints %}
@@ -127,7 +127,8 @@
                   >
                   <input
                       id="challenge-input" class="challenge-input form-control"
-                      @keyup.enter="submitChallenge()" type="text" name="submission"
+                      type="text" name="submission"
+                      @keyup.enter="submitChallenge()"
                       placeholder="Flag" x-model="submission"
                   >
                 {% endblock %}

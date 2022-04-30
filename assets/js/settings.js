@@ -51,12 +51,12 @@ Alpine.data("SettingsForm", () => ({
       this.success = false;
       this.error = true;
 
-      Object.keys(response.errors).map((error) => {
+      Object.keys(response.errors).map(error => {
         const error_msg = response.errors[error];
         this.errors.push(error_msg);
       });
     }
-  },
+  }
 }));
 
 Alpine.data("TokensForm", () => ({
@@ -76,7 +76,7 @@ Alpine.data("TokensForm", () => ({
 
   copyToken() {
     copyToClipboard(this.$refs.token);
-  },
+  }
 }));
 
 Alpine.data("Tokens", () => ({
@@ -94,7 +94,7 @@ Alpine.data("Tokens", () => ({
     if ($token) {
       $token.remove();
     }
-  },
+  }
 }));
 
 Alpine.start();
