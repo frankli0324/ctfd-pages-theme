@@ -215,22 +215,22 @@
       <h1 id="team-id" team-id="{{ team.id }}">{{ team.name }}</h1>
       {% if team.oauth_id %}
         <a href="https://majorleaguecyber.org/t/{{ team.name }}">
-          <h3><span class="badge badge-primary">Official</span></h3>
+          <h3><span class="badge bg-primary">Official</span></h3>
         </a>
       {% endif %}
 
       {% if team.affiliation %}
         <h3 class="d-inline-block">
-          <span class="badge badge-primary">{{ team.affiliation }}</span>
+          <span class="badge bg-primary">{{ team.affiliation }}</span>
         </h3>
       {% endif %}
 
       {% if team.country %}
         <h3 class="d-inline-block">
-					<span class="badge badge-primary">
-						<i class="flag-{{ team.country.lower() }}"></i>
-						{{ lookup_country_code(team.country) }}
-					</span>
+          <span class="badge bg-primary">
+            <i class="flag-{{ team.country.lower() }}"></i>
+            {{ lookup_country_code(team.country) }}
+          </span>
         </h3>
       {% endif %}
 
@@ -242,7 +242,7 @@
 
       <h2 id="team-place" class="text-center">
         {# This intentionally hides the team's place when scores are hidden because this can be their internal profile
-			     and we don't want to leak their place in the CTF. #}
+           and we don't want to leak their place in the CTF. #}
         {# Public page hiding is done at the route level #}
         {% if scores_visible() %}
           {% if place %}
@@ -443,7 +443,7 @@
         'id': team.id,
         'name': team.name,
         'account_id': 'me',
-		  } | tojson }};
+      } | tojson }};
 
       window.team_captain = {{ (user.id == team.captain_id) | tojson }};
   </script>
