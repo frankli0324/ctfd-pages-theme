@@ -81,32 +81,6 @@
     {% set solves = user.solves %}
     {% set awards = user.awards %}
     {% if solves or awards %}
-      <div class="row" x-data="UserGraphs">
-        <div class="col-md-6 d-none d-md-block d-lg-block">
-          <div id="keys-pie-graph" x-ref="solvepercentage" class="d-flex align-items-center">
-            <div class="text-center w-100">
-              <i class="fas fa-circle-notch fa-spin fa-3x fa-fw spinner"></i>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 d-none d-md-block d-lg-block">
-          <div id="categories-pie-graph" x-ref="categorybreakdown" class="d-flex align-items-center">
-            <div class="text-center w-100">
-              <i class="fas fa-circle-notch fa-spin fa-3x fa-fw spinner"></i>
-            </div>
-          </div>
-        </div>
-        <br class="clearfix">
-        <div class="col-md-12 d-none d-md-block d-lg-block">
-          <div id="score-graph" x-ref="scoregraph" class="w-100 d-flex align-items-center">
-            <div class="text-center w-100">
-              <i class="fas fa-circle-notch fa-spin fa-3x fa-fw spinner"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="clearfix"></div>
 
       {% if awards %}
         <div class="row">
@@ -159,6 +133,69 @@
             {% endfor %}
             </tbody>
           </table>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+
+      <div class="row" x-data="UserGraphs">
+        <div class="col-md-6 d-none d-md-block d-lg-block py-4">
+          <div class="progress">
+            <div 
+              class="progress-bar" 
+              role="progressbar" 
+              :style="{ width: `${getSolvePercentage()}%`, 'background-color': 'rgb(0, 209, 64)' }" 
+            >
+            </div>
+            <div 
+              class="progress-bar" 
+              role="progressbar" 
+              :style="{ width: `${getFailPercentage()}%`, 'background-color': 'rgb(207, 38, 0)' }"
+            >
+            </div>
+          </div>
+          <div class="ps-2 float-start">
+            <svg height="16" width="16">
+              <circle cx="8" cy="8" r="5" fill="rgb(0, 209, 64)" />
+            </svg>
+            <small x-text="`Solves (${getSolvePercentage()}%)`"></small>
+          </div>
+          <div class="ps-2 float-start">
+            <svg height="16" width="16">
+              <circle cx="8" cy="8" r="5" fill="rgb(207, 38, 0)" />
+            </svg>
+            <small x-text="`Fails (${getFailPercentage()}%)`"></small>
+          </div>
+        </div>
+        <div class="col-md-6 d-none d-md-block d-lg-block py-4">
+          <div class="progress">
+            <template x-for="category in getCategoryBreakdown()" :key="category.name">
+              <div 
+                class="progress-bar" 
+                role="progressbar" 
+                :style="{ width: `${category.percent}%`, 'background-color': category.color }"
+              >
+              </div>
+            </template>
+          </div>
+          <template x-for="category in getCategoryBreakdown()" :key="category.name">
+            <div class="ps-2 float-start">
+              <svg height="16" width="16">
+                <circle cx="8" cy="8" r="5" :fill="category.color" />
+              </svg>
+              <small x-text="`${category.name} (${category.percent}%)`"></small>
+            </div>
+          </template>
+        </div>
+
+        <br class="clearfix">
+
+        <div class="col-md-12 d-none d-md-block d-lg-block py-4">
+          <div id="score-graph" x-ref="scoregraph" class="w-100 d-flex align-items-center">
+            <div class="text-center w-100">
+              <i class="fas fa-circle-notch fa-spin fa-3x fa-fw spinner"></i>
+            </div>
+          </div>
         </div>
       </div>
     {% else %}

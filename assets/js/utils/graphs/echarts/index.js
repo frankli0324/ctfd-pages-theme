@@ -1,5 +1,5 @@
 import * as echarts from 'echarts/core';
-import { PieChart, LineChart } from 'echarts/charts';
+import { LineChart } from 'echarts/charts';
 import {
   TitleComponent,
   TooltipComponent,
@@ -15,7 +15,6 @@ import { CanvasRenderer } from 'echarts/renderers';
 
 // Register the required components
 echarts.use([
-  PieChart,
   LineChart,
   TitleComponent,
   TooltipComponent,
