@@ -32,10 +32,6 @@ export default defineConfig({
               src: "./node_modules/@fontsource/raleway/files/**/*400*",
               dest: "static/webfonts",
             },
-            {
-               src: "./assets/img/**",
-               dest: "static/assets",
-             },
           ],
           hook: "writeBundle",
         }),
