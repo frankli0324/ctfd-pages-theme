@@ -42,10 +42,11 @@ Alpine.data("UserGraphs", () => ({
 
     let data = [];
     for (const property in breakdown) {
+      let percent_result = Number((breakdown[property] / categories.length) * 100);
       data.push({
         "name": property,
         "count": breakdown[property],
-        "percent": (breakdown[property] / categories.length) * 100,
+        "percent": percent_result.toFixed(2),
         "color": colorHash(property),
       });
     }

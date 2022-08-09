@@ -87,7 +87,7 @@
     ]
   },
   "assets/js/users/public.js": {
-    "file": "assets/users_public.c7c2e286.js",
+    "file": "assets/users_public.02848922.js",
     "src": "assets/js/users/public.js",
     "isEntry": true,
     "imports": [
@@ -98,7 +98,7 @@
     ]
   },
   "assets/js/users/private.js": {
-    "file": "assets/users_private.01766855.js",
+    "file": "assets/users_private.99966eaa.js",
     "src": "assets/js/users/private.js",
     "isEntry": true,
     "imports": [
