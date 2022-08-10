@@ -1,12 +1,11 @@
 const { resolve } = require("path");
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import { CSSManifestPlugin } from "vite-manifest-css";
 import copy from "rollup-plugin-copy";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), CSSManifestPlugin()],
+  plugins: [vue()],
   resolve: {
     alias: {
       "~": resolve(__dirname, "./node_modules/"),
@@ -46,8 +45,8 @@ export default defineConfig({
       ],
       output: {
         manualChunks: {
-          echarts: ['echarts', 'zrender']
-        }
+          echarts: ["echarts", "zrender"],
+        },
       },
       input: {
         index: resolve(__dirname, "assets/js/index.js"),
