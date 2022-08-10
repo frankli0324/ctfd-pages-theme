@@ -140,6 +140,16 @@ Alpine.data("ChallengeBoard", () => ({
   async init() {
     this.challenges = await CTFd.pages.challenges.getChallenges();
     this.loaded = true;
+
+    if (window.location.hash) {
+      let chalHash = decodeURIComponent(window.location.hash.substring(1));
+      let idx = chalHash.lastIndexOf("-");
+      if (idx >= 0) {
+        let pieces = [chalHash.slice(0, idx), chalHash.slice(idx + 1)];
+        let id = pieces[1];
+        await this.loadChallenge(id);
+      }
+    }
   },
 
   getCategories() {
