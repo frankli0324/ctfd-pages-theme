@@ -1,1 +1,0 @@
-import{C as e,m as t}from"./index.cef54aa4.js";window.CTFd=e;window.Alpine=t;e.events.counter.unread.readAll();e.events.controller.broadcast("counter",{count:e.events.counter.unread.getAll().length});t.start();

@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.17.8.tgz#2817fb9d885dd8132ea0f8eb615a6388cca1c240"
   integrity sha512-BoHhDJrJXqcg+ZL16Xv39H9n+AqJ4pcDrQBGZN+wHxIysrLZ3/ECwCBUch/1zUNhnsXULcONU3Ei5Hmkfk6kiQ==
 
-"@ctfdio/ctfd-js@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@ctfdio/ctfd-js/-/ctfd-js-0.0.8.tgz#acabc65c42ac5d449fa429f335505a8e0c37ca6f"
-  integrity sha512-OQfh2DSXXv/Db9j88w6/G/+dBa6Jwtzwg2uDNo8u7rlHbAY3hq3AYqN2yUwPtXJJS3YRbXcH1FyEWDnQ5HIuKQ==
+"@ctfdio/ctfd-js@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@ctfdio/ctfd-js/-/ctfd-js-0.0.9.tgz#047e10002c3cbd2fd9d4ac3820c4cc2d896a4991"
+  integrity sha512-rm50Sk6zBaVfZhi/Ou1LGfslwKS/bSNjJUhMifjtK9lS4bBB7R4eX9Ys7sEQ/VM2UNwFyGYLO4hdD0xOouAWLw==
   dependencies:
     cash-dom "^8.1.1"
     dayjs "^1.10.5"

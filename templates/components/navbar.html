@@ -85,7 +85,7 @@
               </span>
               <span class="d-sm-block d-md-none d-lg-block">
                   <i class="fas fa-bell pe-1"></i>
-                  <span x-data x-show="$store.unread_count" x-text="$store.unread_count" class="badge rounded-pill bg-danger badge-notification"></span>
+                  <span x-data x-show="$store.unread_count > 0" x-text="$store.unread_count" class="badge rounded-pill bg-danger badge-notification"></span>
                   Notifications
               </span>
             </a>
