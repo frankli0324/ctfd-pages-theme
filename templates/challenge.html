@@ -7,12 +7,12 @@
 
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active" href="#challenge" @click="showChallenge()">Challenge</a>
+            <a class="nav-link active" data-bs-target="#challenge" @click="showChallenge()">Challenge</a>
           </li>
 
           {% block solves %}
             <li class="nav-item">
-              <a class="nav-link challenge-solves" href="#solves" @click="showSolves()">
+              <a class="nav-link challenge-solves" data-bs-target="#solves" @click="showSolves()">
                 {% if solves != None %}
                   {{ solves }} {% if solves > 1 %}Solves{% else %}Solves{% endif %}
                 {% endif %}

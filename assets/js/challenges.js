@@ -214,6 +214,7 @@ Alpine.data("ChallengeBoard", () => ({
       // nextTick is required here because we're working in a callback
       Alpine.nextTick(() => {
         Modal.getOrCreateInstance("[x-ref='challengeWindow']").show();
+        history.replaceState(null, null, `#${challenge.data.name}-${challengeId}`);
       });
     });
   },
