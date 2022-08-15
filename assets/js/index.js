@@ -13,6 +13,7 @@ import collapse from "./utils/collapse";
 
 import eventAlerts from "./utils/notifications/alerts";
 import eventToasts from "./utils/notifications/toasts";
+import eventRead from "./utils/notifications/read";
 
 dayjs.extend(advancedFormat);
 CTFd.init(window.init);
@@ -26,6 +27,7 @@ CTFd.init(window.init);
   tooltips();
   collapse();
 
+  eventRead();
   eventAlerts();
   eventToasts();
 })();

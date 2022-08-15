@@ -7,14 +7,13 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.17.8.tgz#2817fb9d885dd8132ea0f8eb615a6388cca1c240"
   integrity sha512-BoHhDJrJXqcg+ZL16Xv39H9n+AqJ4pcDrQBGZN+wHxIysrLZ3/ECwCBUch/1zUNhnsXULcONU3Ei5Hmkfk6kiQ==
 
-"@ctfdio/ctfd-js@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@ctfdio/ctfd-js/-/ctfd-js-0.0.7.tgz#543041bb836b2b6b56b257221b29d08c2703d328"
-  integrity sha512-ODG6wv0Sxt8whtNHh9jLRd1X4S8udEOhgcXNpdYaWwS0DiqrsPkBCh/suEfy1axkCNeYyq/Qq/tYkYF5R8vDxg==
+"@ctfdio/ctfd-js@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@ctfdio/ctfd-js/-/ctfd-js-0.0.8.tgz#acabc65c42ac5d449fa429f335505a8e0c37ca6f"
+  integrity sha512-OQfh2DSXXv/Db9j88w6/G/+dBa6Jwtzwg2uDNo8u7rlHbAY3hq3AYqN2yUwPtXJJS3YRbXcH1FyEWDnQ5HIuKQ==
   dependencies:
     cash-dom "^8.1.1"
     dayjs "^1.10.5"
-    event-source-polyfill "^1.0.24"
     howler "^2.2.1"
     whatwg-fetch "^3.6.2"
 
@@ -442,11 +441,6 @@ estree-walker@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-2.0.2.tgz#52f010178c2a4c117a7757cfe942adb7d2da4cac"
   integrity sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==
-
-event-source-polyfill@^1.0.24:
-  version "1.0.26"
-  resolved "https://registry.yarnpkg.com/event-source-polyfill/-/event-source-polyfill-1.0.26.tgz#86c04d088ef078279168eefa028f928fec5059a4"
-  integrity sha512-IwDLs9fUTcGAyacHBeS53T8wcEkDyDn0UP4tfQqJ4wQP8AyH0mszuQf2ULTylnpI0sMquzJ4usrNV7+uztwI9A==
 
 fast-glob@^3.0.3:
   version "3.2.11"
