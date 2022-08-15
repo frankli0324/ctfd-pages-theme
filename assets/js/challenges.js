@@ -213,7 +213,14 @@ Alpine.data("ChallengeBoard", () => ({
 
       // nextTick is required here because we're working in a callback
       Alpine.nextTick(() => {
-        Modal.getOrCreateInstance("[x-ref='challengeWindow']").show();
+        let modal = Modal.getOrCreateInstance("[x-ref='challengeWindow']");
+        // TODO: Get rid of this private attribute access
+        // See https://github.com/twbs/bootstrap/issues/31266
+        modal._element.addEventListener('hidden.bs.modal', event => {
+          // Remove location hash
+          history.replaceState(null, null, " ");
+        }, {once: true})
+        modal.show();
         history.replaceState(null, null, `#${challenge.data.name}-${challengeId}`);
       });
     });
