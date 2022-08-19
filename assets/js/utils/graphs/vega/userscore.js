@@ -5,7 +5,7 @@ export function getSpec(description, values) {
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
     description: description,
     data: {
-      values: values
+      values: values,
     },
     width: "container",
     mark: {
@@ -13,12 +13,12 @@ export function getSpec(description, values) {
       line: true,
       point: true,
       // interpolate: "step-after",
-      tooltip: { content: "data", nearest: true }
+      tooltip: { content: "data", nearest: true },
     },
     encoding: {
       x: { field: "time", type: "temporal" },
-      y: { field: "score", type: "quantitative" }
-    }
+      y: { field: "score", type: "quantitative" },
+    },
   };
 }
 
@@ -52,7 +52,7 @@ export function getValues(solves, awards) {
     // option.xAxis[0].data.push(time);
     values.push({
       time: time,
-      score: scores[index]
+      score: scores[index],
     });
   });
 
