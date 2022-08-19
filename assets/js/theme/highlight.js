@@ -58,7 +58,7 @@ import yaml from "highlight.js/lib/languages/yaml";
 hljs.registerLanguage("yaml", yaml);
 
 export default () => {
-  document.querySelectorAll("pre code").forEach((el) => {
+  document.querySelectorAll("pre code").forEach(el => {
     hljs.highlightElement(el);
   });
 };

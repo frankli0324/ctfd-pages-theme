@@ -14,21 +14,21 @@ Alpine.data("UserGraphs", () => ({
   failCount: 0,
   awardCount: 0,
 
-  getSolvePercentage(){
+  getSolvePercentage() {
     let percent = (this.solveCount / (this.solveCount + this.failCount)) * 100;
     return Math.round(percent);
   },
 
-  getFailPercentage(){
+  getFailPercentage() {
     let percent = (this.failCount / (this.solveCount + this.failCount)) * 100;
     return Math.round(percent);
   },
 
-  getCategoryBreakdown(){
+  getCategoryBreakdown() {
     let categories = [];
     let breakdown = {};
 
-    this.solves.data.map((solve) => {
+    this.solves.data.map(solve => {
       categories.push(solve.challenge.category);
     });
 
@@ -44,10 +44,10 @@ Alpine.data("UserGraphs", () => ({
     for (const property in breakdown) {
       let percent_result = Number((breakdown[property] / categories.length) * 100);
       data.push({
-        "name": property,
-        "count": breakdown[property],
-        "percent": percent_result.toFixed(2),
-        "color": colorHash(property),
+        name: property,
+        count: breakdown[property],
+        percent: percent_result.toFixed(2),
+        color: colorHash(property),
       });
     }
 

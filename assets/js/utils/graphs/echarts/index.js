@@ -26,10 +26,10 @@ echarts.use([
   DataZoomComponent,
   LabelLayout,
   UniversalTransition,
-  CanvasRenderer
+  CanvasRenderer,
 ]);
 
-export function embed(target, option){
+export function embed(target, option) {
   let chart = echarts.init(target);
   chart.setOption(option);
 

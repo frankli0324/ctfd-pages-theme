@@ -54,7 +54,7 @@ Alpine.data("TeamEditModal", () => ({
         this.errors.push(error_msg);
       });
     }
-  }
+  },
 }));
 
 Alpine.data("TeamCaptainModal", () => ({
@@ -76,13 +76,13 @@ Alpine.data("TeamCaptainModal", () => ({
         this.errors.push(error_msg);
       });
     }
-  }
+  },
 }));
 
 Alpine.data("TeamInviteModal", () => ({
   copy() {
     copyToClipboard(this.$refs.link);
-  }
+  },
 }));
 
 Alpine.data("TeamDisbandModal", () => ({
@@ -96,7 +96,7 @@ Alpine.data("TeamDisbandModal", () => ({
     } else {
       this.errors = response.errors[""];
     }
-  }
+  },
 }));
 
 Alpine.data("CaptainMenu", () => ({
@@ -108,9 +108,7 @@ Alpine.data("CaptainMenu", () => ({
   },
 
   chooseCaptain() {
-    this.teamCaptainModal = new Modal(
-      document.getElementById("team-captain-modal")
-    );
+    this.teamCaptainModal = new Modal(document.getElementById("team-captain-modal"));
     this.teamCaptainModal.show();
   },
 
@@ -119,25 +117,19 @@ Alpine.data("CaptainMenu", () => ({
 
     if (response.success) {
       const code = response.data.code;
-      const url = `${window.location.origin}${
-        CTFd.config.urlRoot
-      }/teams/invite?code=${code}`;
+      const url = `${window.location.origin}${CTFd.config.urlRoot}/teams/invite?code=${code}`;
 
       document.querySelector("#team-invite-modal input[name=link]").value = url;
       this.$store.inviteToken = url;
-      this.teamInviteModal = new Modal(
-        document.getElementById("team-invite-modal")
-      );
+      this.teamInviteModal = new Modal(document.getElementById("team-invite-modal"));
       this.teamInviteModal.show();
     }
   },
 
   disbandTeam() {
-    this.teamDisbandModal = new Modal(
-      document.getElementById("team-disband-modal")
-    );
+    this.teamDisbandModal = new Modal(document.getElementById("team-disband-modal"));
     this.teamDisbandModal.show();
-  }
+  },
 }));
 
 Alpine.data("TeamGraphs", () => ({
@@ -148,21 +140,21 @@ Alpine.data("TeamGraphs", () => ({
   failCount: 0,
   awardCount: 0,
 
-  getSolvePercentage(){
+  getSolvePercentage() {
     let percent = (this.solveCount / (this.solveCount + this.failCount)) * 100;
     return Math.round(percent);
   },
 
-  getFailPercentage(){
+  getFailPercentage() {
     let percent = (this.failCount / (this.solveCount + this.failCount)) * 100;
     return Math.round(percent);
   },
 
-  getCategoryBreakdown(){
+  getCategoryBreakdown() {
     let categories = [];
     let breakdown = {};
 
-    this.solves.data.map((solve) => {
+    this.solves.data.map(solve => {
       categories.push(solve.challenge.category);
     });
 
@@ -177,10 +169,10 @@ Alpine.data("TeamGraphs", () => ({
     let data = [];
     for (const property in breakdown) {
       data.push({
-        "name": property,
-        "count": breakdown[property],
-        "percent": (breakdown[property] / categories.length) * 100,
-        "color": colorHash(property),
+        name: property,
+        count: breakdown[property],
+        percent: (breakdown[property] / categories.length) * 100,
+        color: colorHash(property),
       });
     }
 
