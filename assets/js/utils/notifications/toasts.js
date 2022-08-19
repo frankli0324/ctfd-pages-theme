@@ -13,11 +13,15 @@ export default () => {
     let close = toast._element.querySelector("[data-bs-dismiss='toast']");
     let handler = event => {
       CTFd._functions.events.eventRead(data.id);
-    }
-    close.addEventListener('click', handler, { once: true });
-    toast._element.addEventListener('hidden.bs.toast', event => {
-      close.removeEventListener("click", handler);
-    }, { once: true });
+    };
+    close.addEventListener("click", handler, { once: true });
+    toast._element.addEventListener(
+      "hidden.bs.toast",
+      event => {
+        close.removeEventListener("click", handler);
+      },
+      { once: true }
+    );
 
     toast.show();
   };

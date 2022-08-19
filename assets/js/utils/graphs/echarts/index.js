@@ -1,17 +1,17 @@
-import * as echarts from 'echarts/core';
-import { LineChart } from 'echarts/charts';
+import * as echarts from "echarts/core";
+import { LineChart } from "echarts/charts";
 import {
   TitleComponent,
   TooltipComponent,
   GridComponent,
   DatasetComponent,
-  TransformComponent
-} from 'echarts/components';
+  TransformComponent,
+} from "echarts/components";
 // Features like Universal Transition and Label Layout
-import { LabelLayout, UniversalTransition } from 'echarts/features';
+import { LabelLayout, UniversalTransition } from "echarts/features";
 // Import the Canvas renderer
 // Note that introducing the CanvasRenderer or SVGRenderer is a required step
-import { CanvasRenderer } from 'echarts/renderers';
+import { CanvasRenderer } from "echarts/renderers";
 
 // Register the required components
 echarts.use([
@@ -23,10 +23,10 @@ echarts.use([
   TransformComponent,
   LabelLayout,
   UniversalTransition,
-  CanvasRenderer
+  CanvasRenderer,
 ]);
 
-export function embed(target, option){
+export function embed(target, option) {
   let chart = echarts.init(target);
   chart.setOption(option);
   // $(window).on("resize", function() {

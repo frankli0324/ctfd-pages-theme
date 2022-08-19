@@ -8,7 +8,7 @@ function addTargetBlank(html) {
   let dom = new DOMParser();
   let view = dom.parseFromString(html, "text/html");
   let links = view.querySelectorAll('a[href*="://"]');
-  links.forEach((link) => {
+  links.forEach(link => {
     link.setAttribute("target", "_blank");
   });
   return view.documentElement.outerHTML;
@@ -94,7 +94,7 @@ Alpine.data("Challenge", () => ({
 
   async showSolves() {
     this.solves = await CTFd.pages.challenge.loadSolves(this.id);
-    this.solves.forEach((solve) => {
+    this.solves.forEach(solve => {
       solve.date = dayjs(solve.date).format("MMMM Do, h:mm:ss A");
       return solve;
     });
@@ -155,7 +155,7 @@ Alpine.data("ChallengeBoard", () => ({
   getCategories() {
     const categories = [];
 
-    this.challenges.forEach((challenge) => {
+    this.challenges.forEach(challenge => {
       const { category } = challenge;
 
       if (!categories.includes(category)) {
@@ -182,9 +182,7 @@ Alpine.data("ChallengeBoard", () => ({
     let challenges = this.challenges;
 
     if (category) {
-      challenges = this.challenges.filter(
-        (challenge) => challenge.category === category
-      );
+      challenges = this.challenges.filter(challenge => challenge.category === category);
     }
 
     try {
@@ -207,7 +205,7 @@ Alpine.data("ChallengeBoard", () => ({
   },
 
   async loadChallenge(challengeId) {
-    await CTFd.pages.challenge.displayChallenge(challengeId, (challenge) => {
+    await CTFd.pages.challenge.displayChallenge(challengeId, challenge => {
       challenge.data.view = addTargetBlank(challenge.data.view);
       Alpine.store("challenge").data = challenge.data;
 
@@ -216,10 +214,14 @@ Alpine.data("ChallengeBoard", () => ({
         let modal = Modal.getOrCreateInstance("[x-ref='challengeWindow']");
         // TODO: Get rid of this private attribute access
         // See https://github.com/twbs/bootstrap/issues/31266
-        modal._element.addEventListener('hidden.bs.modal', event => {
-          // Remove location hash
-          history.replaceState(null, null, " ");
-        }, {once: true})
+        modal._element.addEventListener(
+          "hidden.bs.modal",
+          event => {
+            // Remove location hash
+            history.replaceState(null, null, " ");
+          },
+          { once: true }
+        );
         modal.show();
         history.replaceState(null, null, `#${challenge.data.name}-${challengeId}`);
       });

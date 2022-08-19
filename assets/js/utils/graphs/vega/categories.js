@@ -3,7 +3,7 @@ export function getSpec(description, values) {
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
     description: description,
     data: {
-      values: values
+      values: values,
     },
     width: "container",
 
@@ -14,45 +14,45 @@ export function getSpec(description, values) {
             name: "category",
             select: {
               type: "point",
-              fields: ["category"]
+              fields: ["category"],
             },
-            bind: "legend"
-          }
+            bind: "legend",
+          },
         ],
         mark: {
           type: "arc",
           innerRadius: 50,
           outerRadius: 95,
-          stroke: "#fff"
+          stroke: "#fff",
         },
         encoding: {
           opacity: {
             condition: {
               param: "category",
-              value: 1
+              value: 1,
             },
-            value: 0.2
-          }
-        }
+            value: 0.2,
+          },
+        },
       },
       {
         mark: {
           type: "text",
-          radius: 105
+          radius: 105,
         },
         encoding: {
           text: {
             field: "value",
-            type: "quantitative"
-          }
-        }
-      }
+            type: "quantitative",
+          },
+        },
+      },
     ],
     encoding: {
       theta: {
         field: "value",
         type: "quantitative",
-        stack: true
+        stack: true,
       },
       color: {
         field: "category",
@@ -62,10 +62,10 @@ export function getSpec(description, values) {
         //   range: ["#00d13f", "#cf2600"],
         // },
         legend: {
-          orient: "bottom"
-        }
-      }
-    }
+          orient: "bottom",
+        },
+      },
+    },
   };
 }
 
@@ -97,7 +97,7 @@ export function getValues(solves) {
   keys.forEach((category, index) => {
     values.push({
       category: category,
-      value: counts[index]
+      value: counts[index],
     });
   });
 
