@@ -3,6 +3,7 @@ import CTFd from "./index";
 import dayjs from "dayjs";
 
 import { Modal, Tab } from "bootstrap";
+import highlight from "./theme/highlight";
 
 function addTargetBlank(html) {
   let dom = new DOMParser();
@@ -86,6 +87,10 @@ Alpine.data("Challenge", () => ({
       console.log(error);
     }
     return styles;
+  },
+
+  async init() {
+    highlight();
   },
 
   async showChallenge() {

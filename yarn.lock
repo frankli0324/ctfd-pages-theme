@@ -536,11 +536,6 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-highlight.js@^11.5.1:
-  version "11.5.1"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-11.5.1.tgz#027c24e4509e2f4dcd00b4a6dda542ce0a1f7aea"
-  integrity sha512-LKzHqnxr4CrD2YsNoIf/o5nJ09j4yi/GcH5BnYz9UnVpZdS4ucMgvP61TDty5xJcFGRjnH4DpujkS9bHT3hq0Q==
-
 howler@^2.2.1:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/howler/-/howler-2.2.3.tgz#a2eff9b08b586798e7a2ee17a602a90df28715da"
@@ -611,6 +606,11 @@ jsonfile@^4.0.0:
   integrity sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
   optionalDependencies:
     graceful-fs "^4.1.6"
+
+lolight@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/lolight/-/lolight-1.4.0.tgz#b037957725284ebf091231ae8f794b3df63b5e17"
+  integrity sha512-d64i6wBResbga3rnM9JYG6Jq/foHDZvSCxoof4kAU48rtzffgbiJlmjs+CfMNlXH2tG3ct+2T6+ht1h4GP7DSg==
 
 magic-string@^0.25.7:
   version "0.25.9"
