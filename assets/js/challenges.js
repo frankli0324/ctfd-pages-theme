@@ -4,7 +4,6 @@ import dayjs from "dayjs";
 import CTFd from "./index";
 import highlight from "./theme/highlight";
 
-
 import { Modal, Tab } from "bootstrap";
 
 function addTargetBlank(html) {
