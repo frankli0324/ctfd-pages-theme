@@ -1,9 +1,11 @@
-name: prettier
+name: build
 
-on: [ pull_request ]
+on:
+  push:
+    branches: main
 
 jobs:
-  lint:
+  static:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,5 +19,12 @@ jobs:
           node-version: '16.x'
       - name: Install dependencies
         run: yarn --frozen-lockfile
-      - name: Lint with prettier
-        run: yarn lint
+      - name: Format
+        run: yarn format
+      - name: Build
+        run: yarn build
+      - name: Push built files
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          message: "chore: yarn build"
