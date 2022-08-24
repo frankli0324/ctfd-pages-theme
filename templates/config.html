@@ -31,5 +31,17 @@
     <textarea class="form-control text-monospace" name="challenge_order" rows="5"></textarea>
   </div>
 
-  <button type="submit" class="btn btn-primary float-right">Update</button>
+  <div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="use_default_code_highlighter" name="use_default_code_highlighter" checked>
+      <label class="form-check-label" for="use_default_code_highlighter">
+        Use Default Code Highlighter
+      </label>
+    </div>
+    <small class="form-text text-muted">
+      Enable or disable the default code highlighter <a href="https://github.com/lrsjng/lolight" target="_blank">lolight</a>. This can be disabled to use your own code highlighter of choice.
+    </small>
+  </div>
+
+  <button type="submit" class="btn btn-primary float-right mt-4">Update</button>
 </form>

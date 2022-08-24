@@ -1,17 +1,20 @@
-import * as echarts from 'echarts/core';
-import { LineChart } from 'echarts/charts';
+import * as echarts from "echarts/core";
+import { LineChart } from "echarts/charts";
 import {
   TitleComponent,
   TooltipComponent,
   GridComponent,
   DatasetComponent,
-  TransformComponent, LegendComponent, ToolboxComponent, DataZoomComponent
-} from 'echarts/components';
+  TransformComponent,
+  LegendComponent,
+  ToolboxComponent,
+  DataZoomComponent,
+} from "echarts/components";
 // Features like Universal Transition and Label Layout
-import { LabelLayout, UniversalTransition } from 'echarts/features';
+import { LabelLayout, UniversalTransition } from "echarts/features";
 // Import the Canvas renderer
 // Note that introducing the CanvasRenderer or SVGRenderer is a required step
-import { CanvasRenderer } from 'echarts/renderers';
+import { CanvasRenderer } from "echarts/renderers";
 
 // Register the required components
 echarts.use([

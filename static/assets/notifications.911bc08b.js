@@ -1,5 +1,0 @@
-<<<<<<< HEAD:static/assets/notifications.d317ce7f.js
-import{C as e,m as n}from"./index.e6e907a5.js";window.CTFd=e;window.Alpine=n;let l=e.events.counter.read.getLast();e.fetch(`/api/v1/notifications?since_id=${l}`).then(t=>t.json()).then(t=>{let a=t.data,o=e.events.counter.read.getAll();a.forEach(d=>{o.push(d.id)}),e.events.counter.read.setAll(o),e.events.counter.unread.readAll();let r=e.events.counter.unread.getAll().length;e.events.controller.broadcast("counter",{count:r}),n.store("unread_count",r)});n.start();
-=======
-import{C as e,m as n}from"./index.612e8617.js";window.CTFd=e;window.Alpine=n;let l=e.events.counter.read.getLast();e.fetch(`/api/v1/notifications?since_id=${l}`).then(t=>t.json()).then(t=>{let a=t.data,o=e.events.counter.read.getAll();a.forEach(d=>{o.push(d.id)}),e.events.counter.read.setAll(o),e.events.counter.unread.readAll();let r=e.events.counter.unread.getAll().length;e.events.controller.broadcast("counter",{count:r}),n.store("unread_count",r)});n.start();
->>>>>>> d3e38c3afc6058fdfcf6abf0b8c7b55b1ac6c74d:static/assets/notifications.911bc08b.js
