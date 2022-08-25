@@ -31,5 +31,17 @@
     <textarea class="form-control text-monospace" name="challenge_order" rows="5"></textarea>
   </div>
 
-  <button type="submit" class="btn btn-primary float-right">Update</button>
+  <div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="use_builtin_code_highlighter" name="use_builtin_code_highlighter" checked>
+      <label class="form-check-label" for="use_builtin_code_highlighter">
+        Use Built-In Syntax Highlighter
+      </label>
+    </div>
+    <small class="form-text text-muted">
+      The built-in syntax highlighter is lightweight and fast but may not always correctly highlight all languages. You can disable the built-in highlighter in order to use your own.
+    </small>
+  </div>
+
+  <button type="submit" class="btn btn-primary float-right mt-4">Update</button>
 </form>

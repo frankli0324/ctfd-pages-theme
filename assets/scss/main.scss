@@ -2,8 +2,6 @@
   $info: #5c728f
 );
 
-@use "highlight.js/scss/github" as *;
-
 @use "includes/components/table";
 @use "includes/components/jumbotron";
 @use "includes/components/challenge";
@@ -14,6 +12,7 @@
 @use "includes/utils/opacity";
 @use "includes/utils/min-height";
 @use "includes/utils/cursors";
+@use "includes/utils/lolight";
 
 @use "includes/icons/award-icons";
 @use "includes/icons/flag-icons";
