@@ -1,6 +1,7 @@
 import Alpine from "alpinejs";
-import CTFd from "./index";
 import dayjs from "dayjs";
+
+import CTFd from "./index";
 
 import { Modal, Tab } from "bootstrap";
 import highlight from "./theme/highlight";
@@ -61,6 +62,10 @@ Alpine.data("Challenge", () => ({
   tab: null,
   solves: [],
   response: null,
+
+  async init() {
+    highlight();
+  },
 
   getStyles() {
     let styles = {
