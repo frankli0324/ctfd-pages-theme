@@ -4,8 +4,8 @@ import lolight from "lolight";
 export default () => {
   if (
     // default to true if config is not defined yet
-    !CTFd.config.themeSettings.hasOwnProperty("use_default_code_highlighter") ||
-    CTFd.config.themeSettings.use_default_code_highlighter === true
+    !CTFd.config.themeSettings.hasOwnProperty("use_builtin_code_highlighter") ||
+    CTFd.config.themeSettings.use_builtin_code_highlighter === true
   ) {
     lolight("pre code");
   }
