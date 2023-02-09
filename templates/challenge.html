@@ -14,7 +14,7 @@
             <li class="nav-item">
               <a class="nav-link challenge-solves" data-bs-target="#solves" @click="showSolves()">
                 {% if solves != None %}
-                  {{ solves }} {% if solves > 1 %}Solves{% else %}Solves{% endif %}
+                  {{ solves }} Solve{{ solves.cost|pluralize }}
                 {% endif %}
               </a>
             </li>
@@ -73,7 +73,7 @@
                     </details>
                     {% else %}
                     <details @toggle="showHint(event)">
-                      <summary>Unlock Hint for {{ hint.cost }} points</summary>
+                      <summary>Unlock Hint for {{ hint.cost }} point{{ hint.cost|pluralize }}</summary>
                       <div x-html="html"></div>
                     </details>
                     {% endif %}
