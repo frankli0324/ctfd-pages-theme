@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.17.8.tgz#2817fb9d885dd8132ea0f8eb615a6388cca1c240"
   integrity sha512-BoHhDJrJXqcg+ZL16Xv39H9n+AqJ4pcDrQBGZN+wHxIysrLZ3/ECwCBUch/1zUNhnsXULcONU3Ei5Hmkfk6kiQ==
 
-"@ctfdio/ctfd-js@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@ctfdio/ctfd-js/-/ctfd-js-0.0.9.tgz#047e10002c3cbd2fd9d4ac3820c4cc2d896a4991"
-  integrity sha512-rm50Sk6zBaVfZhi/Ou1LGfslwKS/bSNjJUhMifjtK9lS4bBB7R4eX9Ys7sEQ/VM2UNwFyGYLO4hdD0xOouAWLw==
+"@ctfdio/ctfd-js@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@ctfdio/ctfd-js/-/ctfd-js-0.0.10.tgz#6c0e83baa698ad1128b38d1379f973d03d92186a"
+  integrity sha512-irOvjJktVvD0p0ceMhVaXfQWT7iaBoGwTDwwKFLJdM6j8IhICF3MGFereLSB0Kskduvtk9i9DCODI6XxhXn7ww==
   dependencies:
     cash-dom "^8.1.1"
     dayjs "^1.10.5"
@@ -251,9 +251,9 @@ braces@^3.0.2, braces@~3.0.2:
     fill-range "^7.0.1"
 
 cash-dom@^8.1.1:
-  version "8.1.1"
-  resolved "https://registry.yarnpkg.com/cash-dom/-/cash-dom-8.1.1.tgz#37f6ba46fc470a1efad5215eefc2515271949c60"
-  integrity sha512-aMESow+8m7EuifAeNhpnRHQHN8O24gGeiR53lebD5ShBCisBCoB4y5BBe9pGXtTPP6b1qCp90W9HaaUARyc16Q==
+  version "8.1.4"
+  resolved "https://registry.yarnpkg.com/cash-dom/-/cash-dom-8.1.4.tgz#445c2a509cffa8b1c99094634418b4b439d57718"
+  integrity sha512-bFLMk+r3lv+sDwxlAFfRlMxpRls7zMnSQePVpNouwnpm9G4MbLYZZtIUG2urUgfmIaKlc/hqG8o7yZg3+nFKRA==
 
 "chokidar@>=3.0.0 <4.0.0":
   version "3.5.3"
@@ -286,9 +286,9 @@ csstype@^2.6.8:
   integrity sha512-/WwNkdXfckNgw6S5R125rrW8ez139lBHWouiBvX8dfMFtcn6V81REDqnH7+CRpRipfYlyU1CmOnOxrmGcFOjeA==
 
 dayjs@^1.10.5:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.1.tgz#90b33a3dda3417258d48ad2771b415def6545eb0"
-  integrity sha512-ER7EjqVAMkRRsxNCC5YqJ9d9VQYuWdGt7aiH2qA5R5wt8ZmWaP2dLUSIK6y/kVzLMlmh1Tvu5xUf4M/wdGJ5KA==
+  version "1.11.7"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.7.tgz#4b296922642f70999544d1144a2c25730fce63e2"
+  integrity sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==
 
 dayjs@^1.11.0:
   version "1.11.0"
