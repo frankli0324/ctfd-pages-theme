@@ -18,7 +18,7 @@
       <div class="pt-2">
         {% if user.oauth_id %}
           <a href="https://majorleaguecyber.org/u/{{ user.name }}">
-            <h3 class="d-inline-block mx-1"><span class="badge rounded-pill bg-primary">Official</span></h3>
+            <h3 class="d-inline-block mx-1"><span class="badge rounded-pill bg-primary">{% trans %}Official{% endtrans %}</span></h3>
           </a>
         {% endif %}
 
@@ -85,7 +85,7 @@
       {% if awards %}
         <div class="row">
           <div class="col-md-12">
-            <h3>Awards</h3>
+            <h3>{% trans %}Awards{% endtrans %}</h3>
 
           </div>
           {% for award in awards %}
@@ -107,14 +107,14 @@
 
       <div class="row">
         <div class="col-md-12">
-          <h3>Solves</h3>
+          <h3>{% trans %}Solves{% endtrans %}</h3>
           <table class="table table-striped">
             <thead>
             <tr>
-              <td><b>Challenge</b></td>
-              <td class="d-none d-md-block d-lg-block"><b>Category</b></td>
-              <td><b>Value</b></td>
-              <td><b>Time</b></td>
+              <td><b>{% trans %}Challenge{% endtrans %}</b></td>
+              <td class="d-none d-md-block d-lg-block"><b>{% trans %}Category{% endtrans %}</b></td>
+              <td><b>{% trans %}Value{% endtrans %}</b></td>
+              <td><b>{% trans %}Time{% endtrans %}</b></td>
             </tr>
             </thead>
             <tbody>
@@ -200,7 +200,7 @@
     {% else %}
       <div class="row min-vh-25">
         <h3 class="opacity-50 text-center w-100 justify-content-center align-self-center">
-          No solves yet
+          {% trans %}No solves yet{% endtrans %}
         </h3>
       </div>
     {% endif %}

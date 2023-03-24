@@ -68,7 +68,7 @@
                   <div x-data="Hint" x-init="id = {{ hint.id }}">
                     {% if hint.content %}
                     <details>
-                      <summary>View Hint</summary>
+                      <summary>{% trans %}View Hint{% endtrans %}</summary>
                       <div>{{ hint.html | safe }}</div>
                     </details>
                     {% else %}
@@ -161,7 +161,9 @@
                   >
                     <strong x-text="response.data.message"></strong>
                     <div x-show="(response.data.status == 'correct' || response.data.status == 'already_solved') && getNextId()">
-                      <button @click="nextChallenge()" class="btn btn-info mt-3">Next Challenge</button>
+                      <button @click="nextChallenge()" class="btn btn-info mt-3">
+                        {% trans %}Next Challenge{% endtrans %}
+                      </button>
                     </div>
                   </div>
                 </template>

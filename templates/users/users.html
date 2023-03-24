@@ -3,7 +3,7 @@
 {% block content %}
   <div class="jumbotron">
     <div class="container">
-      <h1>Users</h1>
+      <h1>{% trans %}Users{% endtrans %}</h1>
     </div>
   </div>
   <div class="container">
@@ -43,10 +43,10 @@
         <table class="table table-striped">
           <thead>
           <tr>
-            <td><b>User</b></td>
-            <td><b>Website</b></td>
-            <td class="d-none d-md-table-cell"><b>Affiliation</b></td>
-            <td class="d-none d-md-table-cell"><b>Country</b></td>
+            <td><b>{% trans %}User{% endtrans %}</b></td>
+            <td><b>{% trans %}Website{% endtrans %}</b></td>
+            <td class="d-none d-md-table-cell"><b>{% trans %}Affiliation{% endtrans %}</b></td>
+            <td class="d-none d-md-table-cell"><b>{% trans %}Country{% endtrans %}</b></td>
           </tr>
           </thead>
           <tbody>
@@ -63,7 +63,7 @@
 
                 {% if user.oauth_id %}
                   <a href="https://majorleaguecyber.org/u/{{ user.name }}">
-                    <span class="badge bg-primary ms-2">Official</span>
+                    <span class="badge bg-primary ms-2">{% trans %}Official{% endtrans %}</span>
                   </a>
                 {% endif %}
               </td>
@@ -111,7 +111,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="text-center">
-            Page <br>
+            {% trans %}Page{% endtrans %} <br>
 
             {% if users.page != 1 %}
               <a href="{{ prev_page }}">&lt;&lt;&lt;</a>

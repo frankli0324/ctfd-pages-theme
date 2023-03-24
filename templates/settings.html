@@ -4,7 +4,9 @@
 {% block content %}
   <div class="jumbotron">
     <div class="container">
-      <h1>Settings</h1>
+      <h1>
+        {% trans %}Settings{% endtrans %}
+      </h1>
     </div>
   </div>
 
@@ -16,12 +18,12 @@
           <button
               class="nav-link active" id="settings-profile-tab" data-bs-toggle="pill"
               data-bs-target="#profile" role="tab"
-          >Profile
+          >{% trans %}Profile{% endtrans %}
           </button>
           <button
               class="nav-link" id="settings-tokens-tab" data-bs-toggle="pill" data-bs-target="#tokens"
               role="tab"
-          >Access Tokens
+          >{% trans %}Access Tokens{% endtrans %}
           </button>
         </div>
       </div>
@@ -85,7 +87,7 @@
                       x-cloak="success" x-show="success"
                   >
                     <strong>Success!</strong>
-                    Your profile has been updated
+                    {% trans %}Your profile has been updated{% endtrans %}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                     </button>
                   </div>
@@ -93,7 +95,7 @@
 
                   <template x-for="(msg, idx) in errors" :key="idx">
                     <div class="alert alert-danger alert-dismissible" role="alert">
-                      <span class="sr-only">Error:</span>
+                      <span class="sr-only">{% trans %}Error:{% endtrans %}</span>
                       <span x-text="msg"></span>
                       <button
                           type="button" class="btn-close" data-bs-dismiss="alert"
@@ -119,7 +121,7 @@
                   <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title">API Key Generated</h5>
+                        <h5 class="modal-title">{% trans %}API Key Generated{% endtrans %}</h5>
                         <button
                             type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"
@@ -127,7 +129,7 @@
                       </div>
 
                       <div class="modal-body">
-                        <p>Please copy your API Key, it won't be shown again!</p>
+                        <p>{% trans %}Please copy your API Key, it won't be shown again!{% endtrans %}</p>
 
                         <div class="input-group mb-3">
                           <input
@@ -168,7 +170,7 @@
             {% if tokens %}
               <hr>
 
-              <h4 class="text-center mt-3">Active Tokens</h4>
+              <h4 class="text-center mt-3">{% trans %}Active Tokens{% endtrans %}</h4>
 
               {# This has to be wrapping the table modal, because div with modal will get pushed out
                  of the table and alpine ref will not work #}
@@ -180,7 +182,7 @@
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title">Delete Token</h5>
+                        <h5 class="modal-title">{% trans %}Delete Token{% endtrans %}</h5>
                         <button
                             type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"
@@ -189,7 +191,7 @@
                       </div>
 
                       <div class="modal-body">
-                        <p>Are you sure you want to delete this token?</p>
+                        <p>{% trans %}Are you sure you want to delete this token?{% endtrans %}</p>
                       </div>
 
                       <div class="modal-footer">
@@ -209,9 +211,9 @@
                 <table class="table table-striped">
                   <thead>
                   <tr>
-                    <td class="text-center"><b>Created</b></td>
-                    <td><b>Expiration</b></td>
-                    <td><b>Delete</b></td>
+                    <td class="text-center"><b>{% trans %}Created{% endtrans %}</b></td>
+                    <td><b>{% trans %}Expiration{% endtrans %}</b></td>
+                    <td><b>{% trans %}Delete{% endtrans %}</b></td>
                   </tr>
                   </thead>
                   <tbody>

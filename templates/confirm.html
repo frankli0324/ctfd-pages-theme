@@ -3,7 +3,9 @@
 {% block content %}
   <div class="jumbotron">
     <div class="container">
-      <h1>Confirm</h1>
+      <h1>
+        {% trans %}Confirm{% endtrans %}
+      </h1>
     </div>
   </div>
 
@@ -13,20 +15,19 @@
         {% include "components/errors.html" %}
 
         <h5 class="text-center">
-          We've sent a confirmation email to your email address.
+          {% trans %}We've sent a confirmation email to your email address.{% endtrans %}
         </h5>
 
         <br>
 
         <h5 class="text-center">
-          Please click the link in that email to confirm your account.
+          {% trans %}Please click the link in that email to confirm your account.{% endtrans %}
         </h5>
 
         <br>
 
         <h5 class="text-center">
-          If the email doesn’t arrive, check your spam folder or
-          contact an administrator to manually verify your account.
+          {% trans %}If the email doesn’t arrive, check your spam folder or contact an administrator to manually verify your account.{% endtrans %}
         </h5>
 
         <hr>
@@ -39,7 +40,7 @@
               </div>
               <div class="mb-3 col-md-6">
                 <a href="{{ url_for('views.settings') }}" class="btn btn-secondary w-100">
-                  Change Email Address
+                  {% trans %}Change Email Address{% endtrans %}
                 </a>
               </div>
               {{ form.nonce() }}
