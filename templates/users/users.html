@@ -24,7 +24,7 @@
               {{ form.field(class="form-control form-select w-100") }}
             </div>
             <div class="mb-3 col-md-8">
-              {{ form.q(class="form-control w-100", placeholder="Search for matching users") }}
+              {{ form.q(class="form-control w-100", placeholder=form.q.description) }}
             </div>
             <div class="mb-3 col-md-2">
               <button type="submit" class="btn btn-primary w-100">
