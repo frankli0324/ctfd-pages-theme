@@ -174,16 +174,15 @@ Alpine.data("ChallengeBoard", () => ({
   getCategories() {
     const categories = [];
 
-    this.challenges.forEach((challenge) => {
+    this.challenges.forEach(challenge => {
       let { category } = challenge;
-      category = category.split('.')[1];
+      category = category.split(".")[1];
 
       if (category && !categories.includes(category)) {
-        if (category === ' ')
+        if (category === " ")
           //make sure the default category stays on top
           categories.unshift(category);
-        else
-          categories.push(category);
+        else categories.push(category);
       }
     });
 
@@ -207,7 +206,7 @@ Alpine.data("ChallengeBoard", () => ({
 
     if (category !== null) {
       challenges = this.challenges.filter(
-        chall => chall.category.split('.')[1] === category
+        chall => chall.category.split(".")[1] === category
       );
     }
 
@@ -229,11 +228,13 @@ Alpine.data("ChallengeBoard", () => ({
   async loadChallenges(search) {
     this.loaded = false;
     this.challenges = await CTFd.pages.challenges.getChallenges({
-      q: search, field: "category",
-    })
+      q: search,
+      field: "category",
+    });
     for (let chall of this.challenges) {
       if (chall.category === search)
-        chall.category = `${chall.category}. `; // default sub-category
+        // default sub-category
+        chall.category = `${chall.category}. `;
     }
     this.loaded = true;
   },
@@ -279,11 +280,11 @@ Alpine.data("PageBoard", () => ({
     const response = await CTFd.fetch("/api/v1/challenges/categories");
     const body = await response.json();
     const pages = body["data"];
-    this.pages = Array.from(new Set(pages.map(p => p.split('.')[0])));
+    this.pages = Array.from(new Set(pages.map(p => p.split(".")[0])));
     if (this.current_page === null && this.pages.length != 0) {
       this.selectPage(this.pages[0]);
     }
   },
-}))
+}));
 
 Alpine.start();
