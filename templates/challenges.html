@@ -13,10 +13,20 @@
         {% include "components/errors.html" %}
       </div>
     </div>
+    <div class="row" x-data="{ current_page: null }">
+      <div class="col-md-2" x-data="PageBoard">
+        <div class="nav flex-column nav-pills sticky-top sticky-offset" id="pages-board">
+          <template x-for="(page, idx) in pages" :key="idx">
+            <a class="nav-link" data-toggle="pill" role="tab" href="#" x-text="page" x-transition
+              @click="selectPage(page)" :class="current_page === page ? 'active': ''"></a>
+          </template>
+        </div>
+      </div>
 
     <div 
+      class="col-md-9 offset-md-1" 
       x-data="ChallengeBoard" 
-      @load-challenges.window="loadChallenges()" 
+      @load-challenges.window="loadChallenges($event.detail)" 
       @load-challenge.window="loadChallenge($event.detail)"
     >
       <div
@@ -63,6 +73,7 @@
       </div>
     </div>
   </div>
+</div>
 {% endblock %}
 
 {% block scripts %}
