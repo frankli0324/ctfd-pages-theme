@@ -149,7 +149,7 @@ Alpine.data("Challenge", () => ({
     }
 
     // Dispatch load-challenges event to call loadChallenges in the ChallengeBoard
-    this.$dispatch("load-challenges");
+    this.$dispatch("load-challenges", this.current_page);
   },
 }));
 
@@ -159,9 +159,7 @@ Alpine.data("ChallengeBoard", () => ({
   challenge: null,
 
   async init() {
-    this.challenges = await CTFd.pages.challenges.getChallenges();
-    this.loaded = true;
-
+    // load-challenges event is triggered initially by PageBoard
     if (window.location.hash) {
       let chalHash = decodeURIComponent(window.location.hash.substring(1));
       let idx = chalHash.lastIndexOf("-");
@@ -176,11 +174,16 @@ Alpine.data("ChallengeBoard", () => ({
   getCategories() {
     const categories = [];
 
-    this.challenges.forEach(challenge => {
-      const { category } = challenge;
+    this.challenges.forEach((challenge) => {
+      let { category } = challenge;
+      category = category.split('.')[1];
 
-      if (!categories.includes(category)) {
-        categories.push(category);
+      if (category && !categories.includes(category)) {
+        if (category === ' ')
+          //make sure the default category stays on top
+          categories.unshift(category);
+        else
+          categories.push(category);
       }
     });
 
@@ -203,7 +206,9 @@ Alpine.data("ChallengeBoard", () => ({
     let challenges = this.challenges;
 
     if (category !== null) {
-      challenges = this.challenges.filter(challenge => challenge.category === category);
+      challenges = this.challenges.filter(
+        chall => chall.category.split('.')[1] === category
+      );
     }
 
     try {
@@ -221,8 +226,16 @@ Alpine.data("ChallengeBoard", () => ({
     return challenges;
   },
 
-  async loadChallenges() {
-    this.challenges = await CTFd.pages.challenges.getChallenges();
+  async loadChallenges(search) {
+    this.loaded = false;
+    this.challenges = await CTFd.pages.challenges.getChallenges({
+      q: search, field: "category",
+    })
+    for (let chall of this.challenges) {
+      if (chall.category === search)
+        chall.category = `${chall.category}. `; // default sub-category
+    }
+    this.loaded = true;
   },
 
   async loadChallenge(challengeId) {
@@ -249,5 +262,28 @@ Alpine.data("ChallengeBoard", () => ({
     });
   },
 }));
+
+Alpine.data("PageBoard", () => ({
+  pages: [],
+
+  async init() {
+    await this.loadPages();
+  },
+
+  selectPage(page) {
+    this.current_page = `${page}`;
+    this.$dispatch("load-challenges", this.current_page);
+  },
+
+  async loadPages() {
+    const response = await CTFd.fetch("/api/v1/challenges/categories");
+    const body = await response.json();
+    const pages = body["data"];
+    this.pages = Array.from(new Set(pages.map(p => p.split('.')[0])));
+    if (this.current_page === null && this.pages.length != 0) {
+      this.selectPage(this.pages[0]);
+    }
+  },
+}))
 
 Alpine.start();

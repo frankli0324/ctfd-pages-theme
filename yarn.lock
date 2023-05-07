@@ -251,9 +251,9 @@ braces@^3.0.2, braces@~3.0.2:
     fill-range "^7.0.1"
 
 cash-dom@^8.1.1:
-  version "8.1.4"
-  resolved "https://registry.yarnpkg.com/cash-dom/-/cash-dom-8.1.4.tgz#445c2a509cffa8b1c99094634418b4b439d57718"
-  integrity sha512-bFLMk+r3lv+sDwxlAFfRlMxpRls7zMnSQePVpNouwnpm9G4MbLYZZtIUG2urUgfmIaKlc/hqG8o7yZg3+nFKRA==
+  version "8.1.5"
+  resolved "https://registry.yarnpkg.com/cash-dom/-/cash-dom-8.1.5.tgz#7b2668ddbcce1c7893915d56fddb0abcda2e32c5"
+  integrity sha512-/BS05CfzyHR5xT2ksKj1sDLPaOv5rSmIwoGxNgdKwUtnIuiJ5neMxVEmZxvfyJiSjGbOMD0Lwe+9v+fszDqHew==
 
 "chokidar@>=3.0.0 <4.0.0":
   version "3.5.3"
