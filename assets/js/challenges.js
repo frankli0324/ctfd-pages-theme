@@ -117,10 +117,21 @@ Alpine.data("Challenge", () => ({
   },
 
   async nextChallenge() {
-    Modal.getOrCreateInstance("[x-ref='challengeWindow']").hide();
+    let modal = Modal.getOrCreateInstance("[x-ref='challengeWindow']");
 
-    // Dispatch load-challenge event to call loadChallenge in the ChallengeBoard
-    this.$dispatch("load-challenge", this.getNextId());
+    // TODO: Get rid of this private attribute access
+    // See https://github.com/twbs/bootstrap/issues/31266
+    modal._element.addEventListener(
+      "hidden.bs.modal",
+      event => {
+        // Dispatch load-challenge event to call loadChallenge in the ChallengeBoard
+        Alpine.nextTick(() => {
+          this.$dispatch("load-challenge", this.getNextId());
+        });
+      },
+      { once: true }
+    );
+    modal.hide();
   },
 
   async submitChallenge() {
