@@ -64,7 +64,7 @@
             {% if hints %}
               <div class="challenge-hints hint-row row">
                 <div class="col-12 mb-3">
-                {% for hint in hints %}
+                {% for hint in hints | sort(attribute="cost") %}
                   <div x-data="Hint" x-init="id = {{ hint.id }}">
                     {% if hint.content %}
                     <details>
