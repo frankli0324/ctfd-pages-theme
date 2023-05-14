@@ -7,7 +7,9 @@
 
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active" data-bs-target="#challenge" @click="showChallenge()">Challenge</a>
+            <a class="nav-link active" data-bs-target="#challenge" @click="showChallenge()">
+              {% trans %}Challenge{% endtrans %}
+            </a>
           </li>
 
           {% block solves %}
@@ -130,7 +132,7 @@
                       id="challenge-input" class="challenge-input form-control"
                       type="text" name="submission"
                       @keyup.enter="submitChallenge()"
-                      placeholder="Flag" x-model="submission"
+                      placeholder="{% trans %}Flag{% endtrans %}" x-model="submission"
                   >
                 {% endblock %}
               </div>
@@ -142,7 +144,7 @@
                       class="challenge-submit btn btn-outline-secondary w-100 h-100" type="submit"
                       @click.debounce.500ms="submitChallenge()"
                   >
-                    Submit
+                    {% trans %}Submit{% endtrans %}
                   </button>
                 {% endblock %}
               </div>
@@ -177,9 +179,11 @@
                 <table class="table table-striped text-center">
                   <thead>
                   <tr>
-                    <td><b>Name</b>
+                    <td>
+                      <b>{% trans %}Name{% endtrans %}</b>
                     </td>
-                    <td><b>Date</b>
+                    <td>
+                      <b>{% trans %}Date{% endtrans %}</b>
                     </td>
                   </tr>
                   </thead>

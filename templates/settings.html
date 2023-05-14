@@ -33,7 +33,7 @@
           <div class="tab-pane fade show active" id="profile" role="tabpanel">
             {% include "components/errors.html" %}
 
-            {% with form = Forms.self.SettingsForm(country=country) %}
+            {% with form = Forms.self.SettingsForm(language=language, country=country) %}
               <form
                   method="post" accept-charset="utf-8" autocomplete="off" role="form"
                   x-data="SettingsForm"
@@ -49,6 +49,11 @@
                 <div class="mb-3">
                   <b>{{ form.email.label(class="form-label") }}</b>
                   {{ form.email(class="form-control", value=email) }}
+                </div>
+
+                <div class="mb-3">
+                  <b>{{ form.language.label(class="form-label") }}</b>
+                  {{ form.language(class="form-control form-select", value=language) }}
                 </div>
 
                 <hr>
