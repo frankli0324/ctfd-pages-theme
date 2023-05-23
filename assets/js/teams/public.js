@@ -1,5 +1,6 @@
-import Alpine from "alpinejs";
 import CTFd from "../index";
+
+import Alpine from "alpinejs";
 import { colorHash } from "@ctfdio/ctfd-js/ui";
 import { getOption as getUserScoreOption } from "../utils/graphs/echarts/userscore";
 import { embed } from "../utils/graphs/echarts";
@@ -15,18 +16,16 @@ Alpine.data("TeamGraphs", () => ({
   awardCount: 0,
 
   getSolvePercentage() {
-    let percent = (this.solveCount / (this.solveCount + this.failCount)) * 100;
-    return Math.round(percent);
+    return ((this.solveCount / (this.solveCount + this.failCount)) * 100).toFixed(2);
   },
 
   getFailPercentage() {
-    let percent = (this.failCount / (this.solveCount + this.failCount)) * 100;
-    return Math.round(percent);
+    return ((this.failCount / (this.solveCount + this.failCount)) * 100).toFixed(2);
   },
 
   getCategoryBreakdown() {
-    let categories = [];
-    let breakdown = {};
+    const categories = [];
+    const breakdown = {};
 
     this.solves.data.map(solve => {
       categories.push(solve.challenge.category);
@@ -40,12 +39,12 @@ Alpine.data("TeamGraphs", () => ({
       }
     });
 
-    let data = [];
+    const data = [];
     for (const property in breakdown) {
       data.push({
         name: property,
         count: breakdown[property],
-        percent: (breakdown[property] / categories.length) * 100,
+        percent: ((breakdown[property] / categories.length) * 100).toFixed(2),
         color: colorHash(property),
       });
     }
@@ -62,13 +61,15 @@ Alpine.data("TeamGraphs", () => ({
     this.failCount = this.fails.meta.count;
     this.awardCount = this.awards.meta.count;
 
-    let userScoreOption = getUserScoreOption(
-      window.TEAM.id,
-      window.TEAM.name,
-      this.solves.data,
-      this.awards.data
+    embed(
+      this.$refs.scoregraph,
+      getUserScoreOption(
+        window.TEAM.id,
+        window.TEAM.name,
+        this.solves.data,
+        this.awards.data
+      )
     );
-    embed(this.$refs.scoregraph, userScoreOption);
   },
 }));
 
