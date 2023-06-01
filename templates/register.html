@@ -3,7 +3,9 @@
 {% block content %}
   <div class="jumbotron">
     <div class="container">
-      <h1>Register</h1>
+      <h1>
+        {% trans %}Register{% endtrans %}
+      </h1>
     </div>
   </div>
 
@@ -30,7 +32,7 @@
               <b>{{ form.name.label(class="form-label") }}</b>
               {{ form.name(class="form-control", value=name) }}
               <small class="form-text text-muted">
-                Your username on the site
+                {% trans %}Your username on the site{% endtrans %}
               </small>
             </div>
 
@@ -38,7 +40,7 @@
               <b>{{ form.email.label(class="form-label") }}</b>
               {{ form.email(class="form-control", value=email) }}
               <small class="form-text text-muted">
-                Never shown to the public
+                {% trans %}Never shown to the public{% endtrans %}
               </small>
             </div>
 
@@ -46,7 +48,7 @@
               <b>{{ form.password.label(class="form-label") }}</b>
               {{ form.password(class="form-control", value=password) }}
               <small class="form-text text-muted">
-                Password used to log into your account
+                {% trans %}Password used to log into your account{% endtrans %}
               </small>
             </div>
 

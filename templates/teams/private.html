@@ -5,7 +5,7 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-action text-center w-100">Edit Team</h2>
+          <h2 class="modal-action text-center w-100">{% trans %}Edit Team{% endtrans %}</h2>
           <button type="button" class="cursor-pointer btn-close" data-bs-dismiss="modal" aria-label="Close">
           </button>
         </div>
@@ -73,14 +73,14 @@
                     role="alert" x-cloak="success" x-show="success"
                 >
                   <strong>Success!</strong>
-                  Your team's profile has been updated
+                  {% trans %}Your team's profile has been updated{% endtrans %}
                   <button type="button" class="cursor-pointer btn-close" data-bs-dismiss="alert" aria-label="Close">
                   </button>
                 </div>
 
                 <template x-for="(msg, idx) in errors" :key="idx">
                   <div class="alert alert-danger alert-dismissible" role="alert">
-                    <span class="sr-only">Error:</span>
+                    <span class="sr-only">{% trans %}Error:{% endtrans %}</span>
                     <span x-text="msg"></span>
 
                     <button type="button" class="cursor-pointer btn-close" data-bs-dismiss="alert" aria-label="Close">
@@ -101,7 +101,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-action text-center w-100">Choose Captain</h2>
+          <h2 class="modal-action text-center w-100">{% trans %}Choose Captain{% endtrans %}</h2>
           <button type="button" class="cursor-pointer btn-close" data-bs-dismiss="modal" aria-label="Close">
           </button>
         </div>
@@ -124,7 +124,7 @@
                     x-show="success"
                 >
                   <strong>Success!</strong>
-                  Your captain rights have been transferred
+                  {% trans %}Your captain rights have been transferred{% endtrans %}
                   <button type="button" class="cursor-pointer btn-close" data-bs-dismiss="alert" aria-label="Close">
                   </button>
                 </div>
@@ -149,7 +149,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-action text-center w-100">Invite Users</h2>
+          <h2 class="modal-action text-center w-100">{% trans %}Invite Users{% endtrans %}</h2>
           <button type="button" class="cursor-pointer btn-close" data-bs-dismiss="modal" aria-label="Close">
           </button>
         </div>
@@ -168,10 +168,10 @@
                 </div>
 
                 <small class="form-text text-muted">
-                  Share this link with your team members for them to join your team
+                  {% trans %}Share this link with your team members for them to join your team{% endtrans %}
                 </small>
                 <small class="form-text text-muted">
-                  Invite links can be re-used and expire after 1 day
+                  {% trans %}Invite links can be re-used and expire after 1 day{% trans %}
                 </small>
               </div>
             </form>
@@ -185,17 +185,17 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-action text-center w-100">Disband Team</h2>
+          <h2 class="modal-action text-center w-100">{% trans %}Disband Team{% endtrans %}</h2>
           <button type="button" class="cursor-pointer btn-close" data-bs-dismiss="modal" aria-label="Close">
           </button>
         </div>
         <div class="modal-body">
-          <p class="mb-0">Are you sure you want to disband your team?</p>
+          <p class="mb-0">{% trans %}Are you sure you want to disband your team?{% endtrans %}</p>
 
           <div class="mt-3">
             <template x-for="(msg, idx) in errors" :key="idx">
               <div class="alert alert-danger" role="alert">
-                <span class="sr-only">Error:</span>
+                <span class="sr-only">{% trans %}Error:{% endtrans %}</span>
                 <span x-text="msg"></span>
               </div>
             </template>
@@ -203,8 +203,8 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
-          <button type="button" class="btn btn-primary" @click="disbandTeam()" :disabled="errors.length > 0">Yes</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal"{% trans %}>No{% endtrans %}</button>
+          <button type="button" class="btn btn-primary" @click="disbandTeam()" :disabled="errors.length > 0">{% trans %}Yes{% endtrans %}</button>
         </div>
       </div>
     </div>
@@ -215,7 +215,7 @@
       <h1 id="team-id" team-id="{{ team.id }}">{{ team.name }}</h1>
       {% if team.oauth_id %}
         <a href="https://majorleaguecyber.org/t/{{ team.name }}">
-          <h3><span class="badge bg-primary">Official</span></h3>
+          <h3><span class="badge bg-primary">{% trans %}Official{% endtrans %}</span></h3>
         </a>
       {% endif %}
 
@@ -247,7 +247,7 @@
         {% if scores_visible() %}
           {% if place %}
             {{ place }}
-            <small>place</small>
+            <small>{% trans %}place{% endtrans %}</small>
           {% endif %}
         {% endif %}
       </h2>
@@ -255,7 +255,7 @@
       <h2 id="team-score" class="text-center">
         {% if score %}
           {{ score }}
-          <small>points</small>
+          <small>{% trans %}points{% endtrans %}</small>
         {% endif %}
       </h2>
 
@@ -312,12 +312,12 @@
 
     <div class="row min-vh-25">
       <div class="col-md-12">
-        <h3>Members</h3>
+        <h3>{% trans %}Members{% endtrans %}</h3>
         <table class="table table-striped">
           <thead>
           <tr>
-            <td><b>User Name</b></td>
-            <td><b>Score</b></td>
+            <td><b>{% trans %}User Name{% endtrans %}</b></td>
+            <td><b>{% trans %}Score{% endtrans %}</b></td>
           </tr>
           </thead>
           <tbody>
@@ -329,7 +329,7 @@
                   {{ member.name }}
                 </a>
                 {% if team.captain_id == member.id %}
-                  <span class="badge bg-primary ms-2">Captain</span>
+                  <span class="badge bg-primary ms-2">{% trans %}Captain{% endtrans %}</span>
                 {% endif %}
               </td>
               <td>{{ member.score }}</td>
@@ -345,7 +345,7 @@
       {% if awards %}
         <div class="row">
           <div class="col-md-12">
-            <h3>Awards</h3>
+            <h3>{% trans %}Awards{% endtrans %}</h3>
           </div>
 
           {% for award in awards %}
@@ -368,14 +368,14 @@
 
       <div class="row">
         <div class="col-md-12">
-          <h3>Solves</h3>
+          <h3>{% trans %}Solves{% endtrans %}</h3>
           <table class="table table-striped">
             <thead>
             <tr>
-              <td><b>Challenge</b></td>
-              <td class="d-none d-md-block d-lg-block"><b>Category</b></td>
-              <td><b>Value</b></td>
-              <td><b>Time</b></td>
+              <td><b>{% trans %}Challenge{% endtrans %}</b></td>
+              <td class="d-none d-md-block d-lg-block"><b>{% trans %}Category{% endtrans %}</b></td>
+              <td><b>{% trans %}Value{% endtrans %}</b></td>
+              <td><b>{% trans %}Time{% endtrans %}</b></td>
             </tr>
             </thead>
             <tbody>
@@ -465,7 +465,7 @@
     {% else %}
       <div class="row min-vh-25">
         <h3 class="opacity-50 text-center w-100 justify-content-center align-self-center">
-          No solves yet
+          {% trans %}No solves yet{% endtrans %}
         </h3>
       </div>
     {% endif %}

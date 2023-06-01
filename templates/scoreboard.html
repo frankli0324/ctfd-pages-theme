@@ -3,7 +3,9 @@
 {% block content %}
   <div class="jumbotron">
     <div class="container">
-      <h1>Scoreboard</h1>
+      <h1>
+        {% trans %}Scoreboard{% endtrans %}
+      </h1>
     </div>
   </div>
   <div class="container">
@@ -23,9 +25,9 @@
             <table class="table table-striped">
               <thead>
               <tr>
-                <td style="width: 10px"><b>Place</b></td>
+                <td style="width: 10px"><b>{% trans %}Place{% endtrans %}</b></td>
                 <td><b>{{ get_mode_as_word(capitalize=True) }}</b></td>
-                <td><b>Score</b></td>
+                <td><b>{% trans %}Score{% endtrans %}</b></td>
               </tr>
               </thead>
 

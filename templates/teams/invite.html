@@ -3,7 +3,7 @@
 {% block content %}
   <div class="jumbotron">
     <div class="container">
-      <h1>Join Team</h1>
+      <h1>{% trans %}Join Team{% endtrans %}</h1>
     </div>
   </div>
   <div class="container">
@@ -12,11 +12,11 @@
         {% include "components/errors.html" %}
 
         <p class="h3 text-center mt-md-4">
-          Welcome to <strong>{{ team.name }}</strong>!
+          {% trans %}Welcome to{% endtrans %} <strong>{{ team.name }}</strong>!
         </p>
 
         <p class="text-center">
-          Click the button below to join the team!
+          {% trans %}Click the button below to join the team!{% endtrans %}
           <br>
           <small class="text-muted">
             Or <a href="{{ url_for('teams.new') }}">click here</a> if you'd prefer to create your own team.

@@ -3,7 +3,9 @@
 {% block content %}
   <div class="jumbotron">
     <div class="container">
-      <h1>Login</h1>
+      <h1>
+        {% trans %}Login{% endtrans %}
+      </h1>
     </div>
   </div>
 
@@ -35,7 +37,7 @@
             <div class="row pt-3">
               <div class="col-6 col-md-8">
                 <a class="align-middle" href="{{ url_for('auth.reset_password') }}">
-                  Forgot your password?
+                  {% trans %}Forgot your password?{% endtrans %}
                 </a>
               </div>
 

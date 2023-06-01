@@ -7,14 +7,16 @@
 
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active" data-bs-target="#challenge" @click="showChallenge()">Challenge</a>
+            <a class="nav-link active" data-bs-target="#challenge" @click="showChallenge()">
+              {% trans %}Challenge{% endtrans %}
+            </a>
           </li>
 
           {% block solves %}
             <li class="nav-item">
               <a class="nav-link challenge-solves" data-bs-target="#solves" @click="showSolves()">
                 {% if solves != None %}
-                  {{ solves }} Solve{{ solves.cost|pluralize }}
+                  {{ ngettext("%(num)d Solve", "%(num)d Solves", solves) }}
                 {% endif %}
               </a>
             </li>
@@ -68,7 +70,7 @@
                   <div x-data="Hint" x-init="id = {{ hint.id }}">
                     {% if hint.content %}
                     <details>
-                      <summary>View Hint</summary>
+                      <summary>{% trans %}View Hint{% endtrans %}</summary>
                       <div>{{ hint.html | safe }}</div>
                     </details>
                     {% else %}
@@ -130,7 +132,7 @@
                       id="challenge-input" class="challenge-input form-control"
                       type="text" name="submission"
                       @keyup.enter="submitChallenge()"
-                      placeholder="Flag" x-model="submission"
+                      placeholder="{% trans %}Flag{% endtrans %}" x-model="submission"
                   >
                 {% endblock %}
               </div>
@@ -142,7 +144,7 @@
                       class="challenge-submit btn btn-outline-secondary w-100 h-100" type="submit"
                       @click.debounce.500ms="submitChallenge()"
                   >
-                    Submit
+                    {% trans %}Submit{% endtrans %}
                   </button>
                 {% endblock %}
               </div>
@@ -161,7 +163,9 @@
                   >
                     <strong x-text="response.data.message"></strong>
                     <div x-show="(response.data.status == 'correct' || response.data.status == 'already_solved') && getNextId()">
-                      <button @click="nextChallenge()" class="btn btn-info mt-3">Next Challenge</button>
+                      <button @click="nextChallenge()" class="btn btn-info mt-3">
+                        {% trans %}Next Challenge{% endtrans %}
+                      </button>
                     </div>
                   </div>
                 </template>
@@ -175,9 +179,11 @@
                 <table class="table table-striped text-center">
                   <thead>
                   <tr>
-                    <td><b>Name</b>
+                    <td>
+                      <b>{% trans %}Name{% endtrans %}</b>
                     </td>
-                    <td><b>Date</b>
+                    <td>
+                      <b>{% trans %}Date{% endtrans %}</b>
                     </td>
                   </tr>
                   </thead>

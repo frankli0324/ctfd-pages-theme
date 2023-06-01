@@ -3,7 +3,7 @@
 {% block content %}
   <div class="jumbotron">
     <div class="container">
-      <h1>Teams</h1>
+      <h1>{% trans %}Teams{% endtrans %}</h1>
     </div>
   </div>
 
@@ -46,10 +46,10 @@
         <table class="table table-striped">
           <thead>
           <tr>
-            <td class="text-md-start"><b>Team</b></td>
-            <td><b>Website</b></td>
-            <td class="d-none d-md-table-cell"><b>Affiliation</b></td>
-            <td class="d-none d-md-table-cell"><b>Country</b></td>
+            <td class="text-md-start"><b>{% trans %}Team{% endtrans %}</b></td>
+            <td><b>{% trans %}Website{% endtrans %}</b></td>
+            <td class="d-none d-md-table-cell"><b>{% trans %}Affiliation{% endtrans %}</b></td>
+            <td class="d-none d-md-table-cell"><b>{% trans %}Country{% endtrans %}</b></td>
           </tr>
           </thead>
           <tbody>
@@ -121,7 +121,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="text-center">
-            Page <br>
+            {% trans %}Page{% endtrans %} <br>
 
             {% if teams.page != 1 %}
               <a href="{{ prev_page }}">&lt;&lt;&lt;</a>

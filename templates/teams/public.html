@@ -7,7 +7,7 @@
 
       {% if team.oauth_id %}
         <a href="https://majorleaguecyber.org/t/{{ team.name }}">
-          <h3 class="d-inline-block mx-1"><span class="badge bg-primary rounded-pill">Official</span></h3>
+          <h3 class="d-inline-block mx-1"><span class="badge bg-primary rounded-pill">{% trans %}Official{% endtrans %}</span></h3>
         </a>
       {% endif %}
 
@@ -78,12 +78,12 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h3>Members</h3>
+        <h3>{% trans %}Members{% endtrans %}</h3>
         <table class="table table-striped">
           <thead>
           <tr>
-            <td><b>User Name</b></td>
-            <td><b>Score</b></td>
+            <td><b>{% trans %}User Name{% trans %}</b></td>
+            <td><b>{% trans %}Score{% endtrans %}</b></td>
           </tr>
           </thead>
           <tbody>
@@ -106,7 +106,7 @@
       {% if awards %}
         <div class="row">
           <div class="col-md-12">
-            <h3>Awards</h3>
+            <h3>{% trans %}Awards{% endtrans %}</h3>
           </div>
 
           {% for award in awards %}
@@ -134,14 +134,14 @@
 
       <div class="row">
         <div class="col-md-12">
-          <h3>Solves</h3>
+          <h3>{% trans %}Solves{% endtrans %}</h3>
           <table class="table table-striped">
             <thead>
             <tr>
-              <td class="text-center"><b>Challenge</b></td>
-              <td class="d-none d-md-block d-lg-block"><b>Category</b></td>
-              <td><b>Value</b></td>
-              <td><b>Time</b></td>
+              <td class="text-center"><b>{% trans %}Challenge{% endtrans %}</b></td>
+              <td class="d-none d-md-block d-lg-block"><b>{% trans %}Category{% endtrans %}</b></td>
+              <td><b>{% trans %}Value{% endtrans %}</b></td>
+              <td><b>{% trans %}Time{% endtrans %}</b></td>
             </tr>
             </thead>
             <tbody>
@@ -229,7 +229,7 @@
     {% else %}
       <div class="row min-vh-25">
         <h3 class="opacity-50 text-center w-100 justify-content-center align-self-center">
-          No solves yet
+          {% trans %}No solves yet{% endtrans %}
         </h3>
       </div>
     {% endif %}
